@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILDERNESS - Shoot to Delivery Data Workflow and Specifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            border-bottom: 4px solid #2c3e50;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .version-info {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 30px 0;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        em {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .camera-spec {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .camera-spec h4 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        code, pre {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            display: block;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border: 1px solid #ddd;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #17a2b8;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        select {
+            padding: 6px 12px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 0.95em;
+            color: #2c3e50;
+            cursor: pointer;
+            min-width: 200px;
+            transition: border-color 0.3s;
+        }
+
+        select:hover {
+            border-color: #2980b9;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .spec-item {
+            margin-bottom: 12px;
+        }
+
+        .spec-label {
+            display: inline-block;
+            min-width: 180px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .calculator-section {
+            background-color: #f8f9fa;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid #3498db;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .calculator-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #2c3e50;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .calculator-card h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .data-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #3498db;
+            margin: 10px 0;
+        }
+
+        .data-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-detail {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        .total-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .total-summary .data-value {
+            color: white;
+            font-size: 2.5em;
+        }
+
+        .camera-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-remove {
+            padding: 6px 12px;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+
+        .camera-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WILDERNESS</h1>
+        <h2 style="border: none; margin-top: 0;">Shoot to Delivery Data Workflow and Specifications</h2>
+        <div class="version-info">
+            <strong>Version 1</strong><br>
+            <strong>17 / 10 / 2025</strong>
+        </div>
+
+        <hr>
+
+        <h2>Shoot Specification Overview</h2>
+
+        <h3>Project Settings</h3>
+
+        <div class="info-box">
+            <div class="spec-item">
+                <span class="spec-label">Aspect Ratio:</span>
+                <select id="project-aspect">
+                    <option value="2.39" selected>2.39:1 (Cinemascope)</option>
+                    <option value="2.40">2.40:1 (Widescreen)</option>
+                    <option value="1.85">1.85:1 (Theatrical)</option>
+                    <option value="1.78">1.78:1 (16:9 HD)</option>
+                    <option value="1.90">1.90:1 (DCI Flat)</option>
+                    <option value="1.43">1.43:1 (IMAX)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Base Frame Rate:</span>
+                <select id="project-framerate">
+                    <option value="23.976">23.976 fps</option>
+                    <option value="24" selected>24 fps</option>
+                    <option value="25">25 fps (PAL)</option>
+                    <option value="29.97">29.97 fps (NTSC)</option>
+                    <option value="30">30 fps</option>
+                    <option value="48">48 fps (HFR)</option>
+                    <option value="50">50 fps (HFR)</option>
+                    <option value="60">60 fps (HFR)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Pixel Dimensions:</span>
+                <select id="project-resolution">
+                    <option value="8k-full">8K Full-Frame - 8640 x 5760</option>
+                    <option value="8k-uhd">8K UHD - 7680 x 4320</option>
+                    <option value="6k-full">6K Full-Frame - 6048 x 4032</option>
+                    <option value="6k-dci">6K DCI - 6144 x 3240</option>
+                    <option value="5k">5K - 5120 x 2700</option>
+                    <option value="4k-uhd" selected>4K UHD - 3840 x 2160</option>
+                    <option value="4k-dci">4K DCI - 4096 x 2160</option>
+                    <option value="2k-dci">2K DCI - 2048 x 1080</option>
+                    <option value="hd">HD - 1920 x 1080</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Audio Format:</span>
+                <select id="project-audio">
+                    <option value="bwav-24-48" selected>Broadcast WAV - 24-bit, 48kHz</option>
+                    <option value="bwav-24-96">Broadcast WAV - 24-bit, 96kHz</option>
+                    <option value="bwav-32-48">Broadcast WAV - 32-bit float, 48kHz</option>
+                    <option value="lpcm-24-48">LPCM - 24-bit, 48kHz</option>
+                    <option value="lpcm-16-48">LPCM - 16-bit, 48kHz</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Audio Channels:</span>
+                <select id="project-audio-channels">
+                    <option value="2">2 Channel (Stereo)</option>
+                    <option value="4" selected>4 Channel (Quad/Iso-Tracks)</option>
+                    <option value="6">6 Channel (5.1)</option>
+                    <option value="8">8 Channel</option>
+                    <option value="12">12 Channel</option>
+                    <option value="16">16 Channel</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Master Color Space:</span>
+                <select id="project-colorspace">
+                    <option value="sgamut3cine-slog3" selected>S-Gamut3.Cine / S-Log3</option>
+                    <option value="sgamut3-slog3">S-Gamut3 / S-Log3</option>
+                    <option value="aces">ACES (ACEScct)</option>
+                    <option value="arri-wide-gamut">ARRI Wide Gamut 3 / LogC3</option>
+                    <option value="rec2020">Rec.2020 / HLG</option>
+                    <option value="rec709">Rec.709 / BT.1886</option>
+                    <option value="dci-p3">DCI-P3 / Gamma 2.6</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Dailies Pipeline:</span>
+                <select id="project-dailies">
+                    <option value="resolve-yrgb" selected>DaVinci Resolve YRGB</option>
+                    <option value="resolve-aces">DaVinci Resolve ACES</option>
+                    <option value="baselight">Baselight</option>
+                    <option value="scratch">Assimilate Scratch</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Time of Day Timecode Format:</span>
+                <select id="project-timecode">
+                    <option value="24" selected>24 fps</option>
+                    <option value="23.976">23.976 fps</option>
+                    <option value="25">25 fps</option>
+                    <option value="29.97">29.97 fps</option>
+                    <option value="30">30 fps</option>
+                    <option value="48">48 fps</option>
+                    <option value="50">50 fps</option>
+                    <option value="60">60 fps</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Shooting Ratio:</span>
+                <select id="project-shooting-ratio">
+                    <option value="3">3:1 (Low - Documentary)</option>
+                    <option value="5">5:1 (Moderate)</option>
+                    <option value="8">8:1 (Standard)</option>
+                    <option value="10" selected>10:1 (Standard Film)</option>
+                    <option value="15">15:1 (High Coverage)</option>
+                    <option value="20">20:1 (Commercial/Music Video)</option>
+                    <option value="30">30:1 (Very High)</option>
+                    <option value="50">50:1 (Extensive Coverage)</option>
+                </select>
+            </div>
+        </div>
+
+        <h3>Editorial Data Specifications</h3>
+
+        <div class="info-box">
+            <div class="spec-item">
+                <span class="spec-label">Editorial Codec:</span>
+                <select id="project-edit-codec">
+                    <option value="dnxhd115" selected>Avid DNxHD 115</option>
+                    <option value="dnxhd145">Avid DNxHD 145</option>
+                    <option value="dnxhd175">Avid DNxHD 175</option>
+                    <option value="dnxhr-lb">Avid DNxHR LB (Low Bandwidth)</option>
+                    <option value="dnxhr-sq">Avid DNxHR SQ (Standard Quality)</option>
+                    <option value="dnxhr-hq">Avid DNxHR HQ (High Quality)</option>
+                    <option value="prores-proxy">Apple ProRes Proxy</option>
+                    <option value="prores-lt">Apple ProRes LT</option>
+                    <option value="prores-422">Apple ProRes 422</option>
+                    <option value="prores-hq">Apple ProRes 422 HQ</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Editorial Resolution:</span>
+                <select id="project-edit-resolution">
+                    <option value="hd" selected>HD - 1920 x 1080</option>
+                    <option value="2k">2K - 2048 x 1080</option>
+                    <option value="uhd">UHD - 3840 x 2160</option>
+                    <option value="4k">4K DCI - 4096 x 2160</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Editorial Container:</span>
+                <select id="project-edit-container">
+                    <option value="mxf-op-atom" selected>MXF OP-Atom</option>
+                    <option value="mxf-op1a">MXF OP1a</option>
+                    <option value="mov">QuickTime MOV</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Editorial LUT:</span>
+                <select id="project-edit-lut">
+                    <option value="show-lut" selected>Show LUT (TBC)</option>
+                    <option value="s709">s709 (Sony)</option>
+                    <option value="rec709">Rec.709</option>
+                    <option value="none">No LUT Applied</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Sync Audio in Dailies:</span>
+                <select id="project-edit-sync">
+                    <option value="no" selected>No - Vision Only</option>
+                    <option value="yes">Yes - Synced Audio</option>
+                    <option value="separate">Separate Audio Files</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Masking Applied:</span>
+                <select id="project-edit-mask">
+                    <option value="no" selected>No Mask - Full Frame</option>
+                    <option value="soft">Soft Mask (2.39:1)</option>
+                    <option value="hard">Hard Mask (2.39:1)</option>
+                    <option value="guides">Framing Guides Only</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Burn-ins on Dailies:</span>
+                <select id="project-edit-burnins">
+                    <option value="no" selected>No Burn-ins</option>
+                    <option value="basic">Basic (TC, Camera, Date)</option>
+                    <option value="full">Full (TC, Camera, Date, Slate, Scene)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Editorial NLE:</span>
+                <select id="project-edit-nle">
+                    <option value="avid" selected>Avid Media Composer</option>
+                    <option value="premiere">Adobe Premiere Pro</option>
+                    <option value="resolve">DaVinci Resolve</option>
+                    <option value="fcpx">Final Cut Pro X</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Metadata Format:</span>
+                <select id="project-edit-metadata">
+                    <option value="ale" selected>Avid ALE</option>
+                    <option value="edl">EDL (Edit Decision List)</option>
+                    <option value="xml">Final Cut XML</option>
+                    <option value="aaf">AAF (Advanced Authoring Format)</option>
+                    <option value="csv">CSV with Timecode</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Delivery Platform:</span>
+                <select id="project-edit-delivery">
+                    <option value="nextcloud" selected>Nextcloud (wilderness.editcloud.au)</option>
+                    <option value="frameio">Frame.io</option>
+                    <option value="aspera">Aspera</option>
+                    <option value="physical">Physical Drive Delivery</option>
+                    <option value="ftp">FTP/SFTP</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="calculator-section">
+            <h3 style="margin-top: 0;">Data Rate Calculator</h3>
+            <p>Estimated data usage per hour based on current settings</p>
+
+            <div class="calculator-grid">
+                <div class="calculator-card">
+                    <h4>Camera A - Sony Venice 2</h4>
+                    <div class="data-label">Data Per Hour</div>
+                    <div class="data-value" id="calc-camA-hour">--</div>
+                    <div class="data-detail">
+                        <strong>Bitrate:</strong> <span id="calc-camA-bitrate">--</span><br>
+                        <strong>Per Minute:</strong> <span id="calc-camA-minute">--</span><br>
+                        <strong>Per 10 Hours:</strong> <span id="calc-camA-10hour">--</span>
+                    </div>
+                </div>
+
+                <div class="calculator-card">
+                    <h4>Camera B - Sony Venice 2</h4>
+                    <div class="data-label">Data Per Hour</div>
+                    <div class="data-value" id="calc-camB-hour">--</div>
+                    <div class="data-detail">
+                        <strong>Bitrate:</strong> <span id="calc-camB-bitrate">--</span><br>
+                        <strong>Per Minute:</strong> <span id="calc-camB-minute">--</span><br>
+                        <strong>Per 10 Hours:</strong> <span id="calc-camB-10hour">--</span>
+                    </div>
+                </div>
+
+                <div class="calculator-card">
+                    <h4>Camera C - Ronin 4D</h4>
+                    <div class="data-label">Data Per Hour</div>
+                    <div class="data-value" id="calc-camC-hour">--</div>
+                    <div class="data-detail">
+                        <strong>Bitrate:</strong> <span id="calc-camC-bitrate">--</span><br>
+                        <strong>Per Minute:</strong> <span id="calc-camC-minute">--</span><br>
+                        <strong>Per 10 Hours:</strong> <span id="calc-camC-10hour">--</span>
+                    </div>
+                </div>
+
+                <div class="calculator-card">
+                    <h4>Audio (Production Sound)</h4>
+                    <div class="data-label">Data Per Hour</div>
+                    <div class="data-value" id="calc-audio-hour">--</div>
+                    <div class="data-detail">
+                        <strong>Bitrate:</strong> <span id="calc-audio-bitrate">--</span><br>
+                        <strong>Per Minute:</strong> <span id="calc-audio-minute">--</span><br>
+                        <strong>Per 10 Hours:</strong> <span id="calc-audio-10hour">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-summary">
+                <div class="data-label" style="color: rgba(255,255,255,0.9);">Total Combined Data Rate (All Cameras + Audio)</div>
+                <div class="data-value" id="calc-total-hour">-- GB/hour</div>
+                <div style="margin-top: 15px; font-size: 0.95em;">
+                    <strong>Per Shoot Day (10 hours):</strong> <span id="calc-total-day" style="font-size: 1.2em;">--</span><br>
+                    <strong>Weekly Raw Footage (5 days):</strong> <span id="calc-total-week" style="font-size: 1.2em;">--</span><br>
+                    <strong>Shooting Ratio:</strong> <span id="calc-shooting-ratio" style="font-size: 1.2em;">10:1</span><br>
+                    <strong>Estimated Final Edit Storage:</strong> <span id="calc-total-week-ratio" style="font-size: 1.3em; color: #ffd700;">--</span>
+                </div>
+            </div>
+        </div>
+
+        <h3>Cameras</h3>
+
+        <div class="camera-controls">
+            <div>
+                <strong>Camera Configuration</strong>
+                <p style="margin: 5px 0 0 0; font-size: 0.9em; color: #666;">Add or remove cameras from the production</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-primary" onclick="addCamera()">+ Add Camera</button>
+                <button class="btn btn-primary" onclick="exportSettings()" style="background-color: #27ae60;">Export Settings</button>
+                <label class="btn btn-primary" style="background-color: #e67e22; margin: 0; cursor: pointer;">
+                    Import Settings
+                    <input type="file" accept=".json" onchange="importSettings(event)" style="display: none;">
+                </label>
+            </div>
+        </div>
+
+        <div id="cameras-container">
+        <div class="camera-spec" id="camera-A" data-camera-id="A">
+            <div class="camera-header">
+                <h4>A – SONY VENICE 2</h4>
+                <button class="btn btn-danger btn-remove" onclick="removeCamera('A')">Remove Camera</button>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Format:</span>
+                <select id="camA-format">
+                    <option value="x-ocn-xt">X-OCN XT (Extreme)</option>
+                    <option value="x-ocn-st" selected>X-OCN ST (Standard)</option>
+                    <option value="x-ocn-lt">X-OCN LT (Light)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Sensor Type:</span>
+                <select id="camA-sensor">
+                    <option value="8k" selected>8K Sensor (8640 x 5760)</option>
+                    <option value="6k">6K Sensor (6048 x 4032)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Colour Science:</span>
+                <select id="camA-color">
+                    <option value="sgamut3cine" selected>S-Gamut3.Cine / S-Log3</option>
+                    <option value="sgamut3">S-Gamut3 / S-Log3</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Base ISO:</span>
+                <select id="camA-iso">
+                    <option value="800" selected>ISO 800 (Low Base)</option>
+                    <option value="3200">ISO 3200 (High Base) - 8K</option>
+                    <option value="500">ISO 500 (Low Base) - 6K</option>
+                    <option value="2500">ISO 2500 (High Base) - 6K</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">LUT:</span>
+                <select id="camA-lut">
+                    <option value="s709" selected>s709 (Standard Cinema Look)</option>
+                    <option value="r709">R709(800%) (High Contrast)</option>
+                    <option value="custom-cube">Custom .cube file</option>
+                    <option value="custom-art">Custom .ART file</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Frame Rate:</span>
+                <select id="camA-framerate">
+                    <option value="23.98">23.98 fps</option>
+                    <option value="24" selected>24 fps</option>
+                    <option value="25">25 fps</option>
+                    <option value="29.97">29.97 fps</option>
+                    <option value="30">30 fps</option>
+                    <option value="47.95">47.95 fps</option>
+                    <option value="48">48 fps</option>
+                    <option value="50">50 fps</option>
+                    <option value="59.94">59.94 fps</option>
+                    <option value="60">60 fps</option>
+                    <option value="72">72 fps (HFR)</option>
+                    <option value="90">90 fps (HFR)</option>
+                    <option value="96">96 fps (HFR)</option>
+                    <option value="100">100 fps (HFR)</option>
+                    <option value="120">120 fps (HFR)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">ND Filter:</span>
+                <select id="camA-nd">
+                    <option value="clear" selected>Clear (No ND)</option>
+                    <option value="0.3">0.3 (1 stop)</option>
+                    <option value="0.6">0.6 (2 stops)</option>
+                    <option value="0.9">0.9 (3 stops)</option>
+                    <option value="1.2">1.2 (4 stops)</option>
+                    <option value="1.5">1.5 (5 stops)</option>
+                    <option value="1.8">1.8 (6 stops)</option>
+                    <option value="2.1">2.1 (7 stops)</option>
+                    <option value="2.4">2.4 (8 stops)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Dynamic Range:</span> 16 stops
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Recording Media:</span> AXS Memory Card
+            </div>
+        </div>
+
+        <div class="camera-spec" id="camera-B" data-camera-id="B">
+            <div class="camera-header">
+                <h4>B - SONY VENICE 2</h4>
+                <button class="btn btn-danger btn-remove" onclick="removeCamera('B')">Remove Camera</button>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Format:</span>
+                <select id="camB-format">
+                    <option value="x-ocn-xt">X-OCN XT (Extreme)</option>
+                    <option value="x-ocn-st" selected>X-OCN ST (Standard)</option>
+                    <option value="x-ocn-lt">X-OCN LT (Light)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Sensor Type:</span>
+                <select id="camB-sensor">
+                    <option value="8k" selected>8K Sensor (8640 x 5760)</option>
+                    <option value="6k">6K Sensor (6048 x 4032)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Colour Science:</span>
+                <select id="camB-color">
+                    <option value="sgamut3cine" selected>S-Gamut3.Cine / S-Log3</option>
+                    <option value="sgamut3">S-Gamut3 / S-Log3</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Base ISO:</span>
+                <select id="camB-iso">
+                    <option value="800" selected>ISO 800 (Low Base)</option>
+                    <option value="3200">ISO 3200 (High Base) - 8K</option>
+                    <option value="500">ISO 500 (Low Base) - 6K</option>
+                    <option value="2500">ISO 2500 (High Base) - 6K</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">LUT:</span>
+                <select id="camB-lut">
+                    <option value="s709" selected>s709 (Standard Cinema Look)</option>
+                    <option value="r709">R709(800%) (High Contrast)</option>
+                    <option value="custom-cube">Custom .cube file</option>
+                    <option value="custom-art">Custom .ART file</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Frame Rate:</span>
+                <select id="camB-framerate">
+                    <option value="23.98">23.98 fps</option>
+                    <option value="24" selected>24 fps</option>
+                    <option value="25">25 fps</option>
+                    <option value="29.97">29.97 fps</option>
+                    <option value="30">30 fps</option>
+                    <option value="47.95">47.95 fps</option>
+                    <option value="48">48 fps</option>
+                    <option value="50">50 fps</option>
+                    <option value="59.94">59.94 fps</option>
+                    <option value="60">60 fps</option>
+                    <option value="72">72 fps (HFR)</option>
+                    <option value="90">90 fps (HFR)</option>
+                    <option value="96">96 fps (HFR)</option>
+                    <option value="100">100 fps (HFR)</option>
+                    <option value="120">120 fps (HFR)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">ND Filter:</span>
+                <select id="camB-nd">
+                    <option value="clear" selected>Clear (No ND)</option>
+                    <option value="0.3">0.3 (1 stop)</option>
+                    <option value="0.6">0.6 (2 stops)</option>
+                    <option value="0.9">0.9 (3 stops)</option>
+                    <option value="1.2">1.2 (4 stops)</option>
+                    <option value="1.5">1.5 (5 stops)</option>
+                    <option value="1.8">1.8 (6 stops)</option>
+                    <option value="2.1">2.1 (7 stops)</option>
+                    <option value="2.4">2.4 (8 stops)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Dynamic Range:</span> 16 stops
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Recording Media:</span> AXS Memory Card
+            </div>
+        </div>
+
+        <div class="camera-spec" id="camera-C" data-camera-id="C">
+            <div class="camera-header">
+                <h4>C - RONIN 4D</h4>
+                <button class="btn btn-danger btn-remove" onclick="removeCamera('C')">Remove Camera</button>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Sensor Type:</span>
+                <select id="camC-sensor">
+                    <option value="x9-8k" selected>X9-8K (35mm Full-Frame)</option>
+                    <option value="x9-6k">X9-6K (35mm Full-Frame)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Recording Format:</span>
+                <select id="camC-format">
+                    <option value="prores-raw-hq">Apple ProRes RAW HQ</option>
+                    <option value="prores-raw" selected>Apple ProRes RAW</option>
+                    <option value="prores-4444xq">Apple ProRes 4444 XQ</option>
+                    <option value="prores-422hq">Apple ProRes 422 HQ</option>
+                    <option value="prores-422lt">Apple ProRes 422 LT</option>
+                    <option value="h264">H.264 (4:2:0 10-bit)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Colour Science:</span>
+                <select id="camC-color">
+                    <option value="dlog" selected>D-Log</option>
+                    <option value="rec709">Rec.709</option>
+                    <option value="hlg">HLG</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Native ISO:</span>
+                <select id="camC-iso">
+                    <option value="800-4000" selected>ISO 800/4000 (with Dynamic Range Expansion)</option>
+                    <option value="320-1600">ISO 320/1600 (Standard)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Frame Rate:</span>
+                <select id="camC-framerate">
+                    <option value="23.976">23.976 fps</option>
+                    <option value="24" selected>24 fps</option>
+                    <option value="25">25 fps</option>
+                    <option value="29.97">29.97 fps</option>
+                    <option value="30">30 fps</option>
+                    <option value="48">48 fps</option>
+                    <option value="50">50 fps</option>
+                    <option value="59.94">59.94 fps</option>
+                    <option value="60">60 fps</option>
+                    <option value="72">72 fps (HFR)</option>
+                    <option value="96">96 fps (HFR)</option>
+                    <option value="100">100 fps (HFR)</option>
+                    <option value="120">120 fps (HFR)</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">ND Filter:</span>
+                <select id="camC-nd">
+                    <option value="clear" selected>Clear (No ND)</option>
+                    <option value="0.3">2 (0.3) - 1 stop</option>
+                    <option value="0.6">4 (0.6) - 2 stops</option>
+                    <option value="0.9">8 (0.9) - 3 stops</option>
+                    <option value="1.2">16 (1.2) - 4 stops</option>
+                    <option value="1.5">32 (1.5) - 5 stops</option>
+                    <option value="1.8">64 (1.8) - 6 stops</option>
+                    <option value="2.1">128 (2.1) - 7 stops</option>
+                    <option value="2.4">256 (2.4) - 8 stops</option>
+                    <option value="2.7">512 (2.7) - 9 stops</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Lens Mount:</span>
+                <select id="camC-mount">
+                    <option value="dl" selected>DL Mount</option>
+                    <option value="l">L Mount</option>
+                    <option value="m">M Mount</option>
+                    <option value="e">E Mount</option>
+                    <option value="pl">PL Mount</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Recording Media:</span>
+                <select id="camC-media">
+                    <option value="prossd" selected>DJI PROSSD 1TB</option>
+                    <option value="cfexpress">CFexpress 2.0 Type B</option>
+                    <option value="usb-ssd">USB-C SSD</option>
+                </select>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Dynamic Range:</span> 14+ stops
+            </div>
+        </div>
+
+        <div class="camera-spec" id="camera-D" data-camera-id="D">
+            <div class="camera-header">
+                <h4>D - Drone - TBC</h4>
+                <button class="btn btn-danger btn-remove" onclick="removeCamera('D')">Remove Camera</button>
+            </div>
+        </div>
+        </div><!-- End cameras-container -->
+
+        <div class="highlight">
+            <strong>Please inform Soundfirm if any new cameras or resolutions on the existing cameras are brought into the mix. We will require a framing chart for each instance.</strong>
+        </div>
+
+        <h3>Production Specifications</h3>
+
+        <ul>
+            <li><strong>Archival Material:</strong> TBC – Not expecting any</li>
+            <li><strong>Dailies Colour Pipeline:</strong> DaVinci Resolve YRGB</li>
+            <li><strong>Base Frame Rate:</strong> 24 FPS</li>
+            <li><strong>Aspect Ratio:</strong> 2.39</li>
+            <li><strong>Lenses:</strong> TBC</li>
+        </ul>
+
+        <h3>Filename Convention</h3>
+
+        <p><strong>CLIPNAME = FILENAME</strong></p>
+
+        <p>Sequential clip names per card, per camera:</p>
+
+        <p>All cameras to match the following format:</p>
+        <pre>A001C001_20200116_RN9I.mxf
+(camera id_roll number_clip number_date_body id_file type)</pre>
+
+        <div class="highlight">
+            Clipname, filename, TAPE ID, Roll <strong>{ALL THESE METADATA FIELDS MUST MATCH THIS CONVENTION}</strong> e.g A001C001_20200116_RN9I
+        </div>
+
+        <p>There is to be no truncating of filename/tapename.</p>
+
+        <hr>
+
+        <h2>Slating Convention</h2>
+
+        <p><strong>Standard Sequential Slating</strong><br>
+        Scene – Slate – Take</p>
+
+        <h3>Naming Conventions for Shoot Days</h3>
+
+        <ul>
+            <li>Main Shoot starts at SD (Shoot Day) SD01, SD02, SD03 etc</li>
+            <li>Test Shoot days start at TEST_DAY_01</li>
+        </ul>
+
+        <h3>Naming Conventions for Camera Rolls</h3>
+
+        <ul>
+            <li><strong>A Camera</strong> - Sony Venice 2 (starts at roll: A001)</li>
+            <li><strong>B Camera</strong> - Sony Venice 2 (starts at roll: B001)</li>
+            <li><strong>C Camera</strong> – DJI Ronin 4D (starts at roll: C001)</li>
+            <li><strong>D Camera</strong> - Drone - TBC (starts at roll: D001)</li>
+        </ul>
+
+        <p><em>*Test rolls start at 901, i.e. A901, B901, C901 etc</em></p>
+
+        <hr>
+
+        <h2>Production Audio</h2>
+
+        <p><strong>Broadcast WAV Polyphonic</strong></p>
+        <ul>
+            <li>24-bit, 48kHz, iso-tracks + Boom mix and Iso Mix</li>
+            <li>24fps Time of Day Timecode-embedded</li>
+        </ul>
+
+        <h3>Tracks</h3>
+
+        <ul>
+            <li><strong>Left</strong> - Boom Mix Down</li>
+            <li><strong>Right</strong> - Lav Mix Down</li>
+            <li><strong>Track 1</strong> - Boom 1</li>
+            <li><strong>Track 2</strong> - Boom 2</li>
+            <li><strong>Track 3</strong> - Iso Mic 1 (cast no.1)</li>
+            <li><strong>Track 4</strong> - Iso Mic 2 (cast no.2 etc..)</li>
+        </ul>
+
+        <h3>Naming Conventions for Production Audio</h3>
+
+        <p>Starts at roll S01, S02, S03 etc.</p>
+
+        <hr>
+
+        <h2>SF Deliverables: To Editorial</h2>
+
+        <h3>Rendered Format</h3>
+        <ul>
+            <li><strong>Codec:</strong> Avid DNxHD 115 (DNxHR LB for UHD)</li>
+            <li><strong>Container:</strong> MXF OP-Atom</li>
+            <li><strong>Resolution:</strong> 1920 x 1080 (HD)</li>
+            <li><strong>Frame Rate:</strong> 24 fps</li>
+            <li><strong>Aspect Ratio:</strong> 2.39:1 (Full frame, no masking applied)</li>
+            <li><strong>Scan Type:</strong> Progressive</li>
+            <li><strong>Audio:</strong> Vision-only, no synced sound</li>
+            <li><strong>Data Rate:</strong> Approximately 115 Mbps (~50 GB per hour)</li>
+        </ul>
+
+        <h3>Color Pipeline</h3>
+        <ul>
+            <li><strong>Color Space:</strong> ITU BT.Rec 709 (sRGB primaries)</li>
+            <li><strong>Transfer Function:</strong> Gamma 2.4 (BT.1886)</li>
+            <li><strong>LUT:</strong> Show LUT to be applied (TBC)</li>
+            <li><strong>CDL:</strong> No CDLs applied</li>
+            <li><strong>Processing:</strong> DaVinci Resolve YRGB color pipeline</li>
+        </ul>
+
+        <h3>Metadata Requirements</h3>
+        <ul>
+            <li><strong>TAPE ID:</strong> Must match FILENAME</li>
+            <li><strong>REEL ID:</strong> Must match FILENAME</li>
+            <li><strong>CLIPNAME:</strong> Must match FILENAME</li>
+            <li><strong>Time of Day Timecode:</strong> Embedded, 24 fps</li>
+            <li><strong>Source TC:</strong> Preserved from camera original</li>
+            <li><strong>Camera Metadata:</strong> Scene, slate, take, camera roll information</li>
+        </ul>
+
+        <h3>Deliverables Package</h3>
+        <ul>
+            <li>All source material rendered (including NG takes)</li>
+            <li>ALE metadata file from camera/dailies system</li>
+            <li>Copy of original sound rolls in BWAV format (maintaining source directory structure)</li>
+            <li>Camera reports and production paperwork (PDF)</li>
+            <li>QC reports and dailies notes</li>
+        </ul>
+
+        <h3>Delivery Method</h3>
+        <ul>
+            <li><strong>Platform:</strong> Uploaded to wilderness.editcloud.au (Nextcloud)</li>
+            <li><strong>Upload Location:</strong> /upload directory</li>
+            <li><strong>Credentials:</strong> Username: soundfirm / Password: Soundfirm</li>
+            <li><strong>Folder Structure:</strong> Organized by shoot day (SD01, SD02, etc.)</li>
+            <li><strong>Notification:</strong> Email confirmation sent to production upon completion</li>
+        </ul>
+
+        <h3>Quality Control</h3>
+        <ul>
+            <li>Full QC performed on all rendered media</li>
+            <li>Verification of sync points and metadata accuracy</li>
+            <li>Audio levels checked for proper embedding</li>
+            <li>Frame rate and resolution verification</li>
+            <li>File integrity checksums included</li>
+        </ul>
+
+        <h2>Asst Edit Deliverables: Frame IO Production Media</h2>
+
+        <ul>
+            <li><strong>H264</strong> - 1280 x 720, 23.976, 2.39 mask, burn-ins, synced sound.</li>
+            <li>ITU BT.Rec 709, Gamma 2.4, Show LUT, no CDLs</li>
+        </ul>
+
+        <hr>
+
+        <h2>LTO Archiving</h2>
+
+        <p><strong>LTO-7, LTFS formatted, 2 x Sets (A & B)</strong></p>
+        <ul>
+            <li>LTFS Format Spec. 2.2.0</li>
+            <li>Archive set A to be held by Production at the Production Office in a lockable cabinet</li>
+            <li>Archive set B to be held at Soundfirm Melbourne (SFM)</li>
+            <li>A runner will collect Archive A LTO's once filled to move to the Production office</li>
+            <li>LTOs to include Original Camera Files (OCF), Original Sound Rolls (OSF).</li>
+        </ul>
+
+        <hr>
+
+        <h2>Agreed Framing & Extraction</h2>
+
+        <h3>A. Arri Alexa Mini LF ProRes4444 4.3K LF 16:9 UHD</h3>
+
+        <ul>
+            <li><strong>Full Sensor</strong> – 4320 x 2430 px</li>
+            <li><strong>Resolution:</strong> 3840 x 2160</li>
+            <li><strong>2:39:1 Extraction</strong> – 3840 x 1608 px</li>
+        </ul>
+
+        <p><em>*Framing Chart to be supplied.</em></p>
+
+        <h3>B. Arri Alexa Mini LF ProRes4444 4.3K LF 16:9 UHD</h3>
+
+        <ul>
+            <li><strong>Full Sensor</strong> – 4320 x 2430 px</li>
+            <li><strong>Resolution:</strong> 3840 x 2160</li>
+            <li><strong>2:39:1 Extraction</strong> – 3840 x 1608 px</li>
+        </ul>
+
+        <p><em>*Framing Chart to be supplied.</em></p>
+
+        <h3>C. Compact - Format?</h3>
+
+        <p>No GoPro or similar at the moment.</p>
+
+        <h3>D. Drone - Format?</h3>
+
+        <p>Most likely a DJI Inspire 2 and preferably with the Zenmuse 7 camera which allows us to record up to 6k Cinema DNG/RAW or 5.2k in ProRes.</p>
+
+        <hr>
+
+        <h2>Dailies Overview</h2>
+
+        <h3>Camera and Sound Media – OCF / OSF (Original Camera/Sound Files)</h3>
+
+        <ul>
+            <li>All camera cards (OCF) to be physically delivered to Soundfirm Melbourne (SFM, 23-31 Fennell St, Port Melbourne) at lunch split and wrap. (Wrap split to also include location recorded sound cards - OSF).</li>
+            <li>The SFM Data Wrangler (Veronica ?) can be contacted by the Production runners via the What's App group set up for media drop offs and pick-ups.</li>
+            <li>Cards dropped and picked up before/after normal business hours or when the SFM Data Wrangler is not on duty can be left in the locker located under the East stairs inside Soundfirm Melbourne. Production runners to receive entry cards, locker keys and induction into the location of the locker.</li>
+            <li>Our production runners for induction are:
+                <ul>
+                    <li>Malachy Cole 0411 701 046 malachy.cole@redcloudfilms.co</li>
+                    <li>Pablo Christie Murray 0423 042 752 jameschristiemurray@hotmail.com</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Data Processing</h3>
+
+        <ul>
+            <li>The SFM Data Wrangler will offload camera cards and sound rolls, along with any reference information using Pomfort Silverstack. This will be performed to two separate online RAID shares on the SFM Production Network. The copies will be verified using xxHash64 checksums. These checksums will be written to a SFM online directory along with any Silverstack generated PDF manifests.</li>
+            <li>During the offload process, the material will be checked against camera reports to ensure that all reported shots are present.</li>
+            <li>Once camera cards are offloaded to the RAID shares and successfully verified, they will be put into quarantine pending successful LTO tape backup.</li>
+            <li>A Spot QC will be performed on all OCF at no faster than a 2x run-through.</li>
+            <li>The ingested media will receive a 'look' treatment. This treatment will be in the form of a Show LUT (name TBC). Once colour treatments are applied, the media will be added to the render queue.</li>
+            <li>Produce Editorial working copies of the media as mute Avid DNx115. Show LUT(s) will be applied in Editorial.</li>
+            <li>The OCF/OSF material will be archived to 2 x LTO-7 tape cartridges overnight.</li>
+            <li>Once verified, the LTO archives will be locked and labelled.</li>
+            <li>Camera Cards will then be "fake formatted" via Parashoot and made available for pick up and be returned to set.</li>
+        </ul>
+
+        <h3>Transfer to Editorial</h3>
+
+        <ul>
+            <li>On a standard shoot day Editorial media will be created via DaVinci Resolve with the LUT applied and exported to SFM internal storage and packaged with the Audio files, ALE and project paperwork.</li>
+            <li>Files will then be sent from SFM to wilderness.editcloud.au/upload
+                <ul>
+                    <li>Username: soundfirm</li>
+                    <li>Password: Soundfirm (you can change on your end if desired)</li>
+                </ul>
+            </li>
+            <li>Instances where the amount of footage for processing will impact the delivery timeline to editorial, multiple packages will be delivered to Editorial. SFM will prioritise the primary camera material and sound supply, followed by an additional package of the remaining material.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Camera Card Clearance</h2>
+
+        <p>Once all received materials have been copied to SFM Production Network there will be 3 copies - card, SFM Production Network datalab 202 and datalab 203.</p>
+
+        <p>Soundfirm will then make tape copies to LTO 7 from datalab 202 and datalab 203.</p>
+
+        <h3>The 4 steps for card clearance will then be as follows:</h3>
+
+        <ol>
+            <li>SFM email to confirm upload to Editorial (see Appendix 2) with QC and Daily Offload reports attached.</li>
+            <li>Editorial email reply to confirm receipt of all expected materials.</li>
+            <li>SFM email reply to confirm Lab Clearance with LTO Manifest Report attached.</li>
+            <li>SFM Operations Manager email reply to confirm camera cards cleared and ready for reuse.</li>
+        </ol>
+
+        <hr>
+
+        <h2>Documentation and Reports</h2>
+
+        <ul>
+            <li>All reports and documentation will be uploaded each shoot day to a shared location online by the appropriate party: wilderness.editcloud.au</li>
+            <li>At the conclusion of each shooting day, SFM will prepare a full transfer report to be emailed to a production-agreed distribution list. (see Appendix 2.)</li>
+            <li>This document will contain daily finishing totals, as well as any QC-flagged notes for production / editorial.</li>
+            <li>All camera rolls from all shooting units will be included, as well as an overview of all media received.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Editorial Dailies Deliverables</h2>
+
+        <h3>Rendered Format</h3>
+
+        <ul>
+            <li><strong>HD DNx115, MXF OP-ATOM, 24</strong></li>
+            <li>Colour space - BT.1886 (Rec709 Gamma 2.4)</li>
+            <li>Vision-only NO Show LUT, no sync sound</li>
+            <li>No masking applied</li>
+            <li>(Approx 50GB per hour)</li>
+        </ul>
+
+        <h3>Metadata</h3>
+
+        <h4>Picture:</h4>
+        <ul>
+            <li>TAPE ID = FILENAME</li>
+            <li>REEL ID = FILENAME</li>
+            <li>CLIPNAME = FILENAME</li>
+        </ul>
+
+        <h4>Sound:</h4>
+        <p>Soundfirm to supply all sound direct from sound recordist alongside transcodes for Editorial to sync at prep. Recordist will also supply Editorial with a CSV output of the sound report along with the usual PDF.</p>
+
+        <h3>Delivered as/with</h3>
+
+        <ul>
+            <li>All source material rendered, including NG takes</li>
+            <li>ALE metadata from camera/dailies system</li>
+            <li>Copy of original sound rolls in BWAV format, maintaining source directory structure</li>
+            <li>Any miscellaneous production paperwork</li>
+        </ul>
+
+        <h3>Method of Delivery</h3>
+
+        <p>Delivered to wilderness.editcloud.au</p>
+
+        <h3>Delivery Notifications</h3>
+
+        <p>Refer to Appendix 2 when the files are uploading.</p>
+
+        <hr>
+
+        <h2>Dailies Upload</h2>
+
+        <h3>Rendered Format(s)</h3>
+
+        <ul>
+            <li><strong>H264, 24fps, 1080p</strong></li>
+            <li>Colour space - BT.1886 (Rec709 Gamma 2.4)</li>
+            <li>Show LUT with sync sound</li>
+            <li>2.39:1 Letterbox masking and burnins applied</li>
+            <li>2400kbps (bitrate), 128kbs (audio data rate), 48KHz (audio sample rate) using mix tracks</li>
+        </ul>
+
+        <h3>Burn Ins</h3>
+
+        <ul>
+            <li><strong>Top left:</strong> Tape ID</li>
+            <li><strong>Top right:</strong> Shoot day & date</li>
+            <li><strong>Bottom left:</strong> Source TC</li>
+            <li><strong>Bottom right:</strong> Slate</li>
+            <li><strong>Watermark:</strong> Property Wilderness Film PTY LTD</li>
+        </ul>
+
+        <h3>Method of Delivery</h3>
+
+        <p>Editorial to upload to wilderness.editcloud.au, at 1080p.</p>
+
+        <h3>Delivery</h3>
+
+        <p>All takes will be made accessible to the distribution list. Restricted Content will only be distributed to the pre-approved Restricted Dailies distribution list.</p>
+
+        <h3>Delivery Notifications</h3>
+
+        <p>A link to access the Playlists for each Shoot Day will be distributed to pre-authorised recipients, see Appendix 1.</p>
+
+        <p>Recipients will receive an email notification with a Subject in the following format:</p>
+        <pre>WILD Dailies | Day ## | [Date DD MMM YY]</pre>
+
+        <hr>
+
+        <h2>Post Workflow</h2>
+
+        <p>Editorial to provide all turnovers for VFX and Conform as per the turnover documents supplied by Soundfirm.</p>
+
+        <div class="highlight">
+            <strong>STILL TO COME</strong>
+        </div>
+
+        <h3>Colour Workflow - (TBC)</h3>
+
+        <ul>
+            <li>All Alexa cameras will shoot Apple Pro Res 4444 in Arri Wide Gamut 3 / LogC 3 colour space.</li>
+            <li>All other cameras will shoot RAW in their respective LOG colour spaces. (TBC) ProRes4444 only</li>
+            <li>A DOP approved LUT will be used for monitoring on set and creating the dailies. No CDLs will be applied. The dailies will be created in a DaVinci Resolve YRGB project.</li>
+            <li>The show will be graded in a colour managed DaVinci Resolve project.</li>
+            <li><strong><em>Compact & Drone info to be added when information applied</em></strong></li>
+        </ul>
+
+        <h3>VFX Pulls – TBC</h3>
+
+        <p>Editorial will most likely do their own pulls.</p>
+
+        <ul>
+            <li>All VFX requests need to be sent to Soundfirm's DI department. VFX pulls will be done using Assimilate Scratch which allows us to embed metadata into the EXR files.</li>
+            <li>The Arri Alexa will use Arri Wide Gamut 3, LogC 3 colour science</li>
+            <li>Compact and Drone Pulls will be provided to the VFX vendor in the TBC colour space.</li>
+        </ul>
+
+        <h3>VFX Deliveries</h3>
+
+        <ul>
+            <li>VFX to deliver finals to Soundfirm's DI department in the same resolution, file format and colour space as provided with no look data burnt in.</li>
+            <li>All editorial and DI returns need matching filenames and time of day timecode.</li>
+            <li>Editorial to provide Soundfirm with updated AAF / EDL's with all new VFX on a separate track for VFX conform or review.</li>
+        </ul>
+
+        <h3>Creative (Hero) HDR Grade</h3>
+
+        <ul>
+            <li><strong>Colour Space:</strong> Rec2020 container limited to P3D65 PQ / ST2084 - 1000nit (Dolby Vision Workflow to create HDR-10 deliverables)</li>
+            <li><strong>Monitor:</strong> Sony BVM-X310 or Sony BVM-X300</li>
+            <li><strong>Resolution:</strong> UHD (16:9 2.39 letterboxed) - 3840 x 2160</li>
+        </ul>
+
+        <h3>SDR Grade (Theatrical) – Trim Pass derived via Dolby Vision Cinema Tone Mapping</h3>
+
+        <ul>
+            <li><strong>Colour Space:</strong> P3D65</li>
+            <li><strong>Projector:</strong> Christie Solaria Xenon</li>
+            <li><strong>Resolution:</strong> 2K - 2048 x 858 (Mastered in 4K)</li>
+        </ul>
+
+        <h3>SDR Grade - Trim Pass</h3>
+
+        <ul>
+            <li><strong>Colour Space:</strong> Rec709</li>
+            <li><strong>Monitor:</strong> Sony BVM-X310 or Sony BVM-X300</li>
+            <li><strong>Resolution:</strong> UHD (16:9 2.39 letterboxed) - 3840 x 2160</li>
+        </ul>
+
+        <h3>Sound</h3>
+
+        <p>5.1, Dolby ATMOS??</p>
+
+        <hr>
+
+        <h2>Deliverables</h2>
+
+        <h3>Company X</h3>
+
+        <ul>
+            <li>4K DSM</li>
+            <li>4K DCDM</li>
+            <li>4K Encrypted DCP</li>
+            <li>HD SDR Pro Res 422 HQ QT - OAR</li>
+            <li>HD SDR Pro Res 422 HQ QT - 1.78</li>
+            <li>UHD HDR Pro Res 4444 XQ - OAR</li>
+            <li>UHD HDR Pro Res 4444 XQ - 178</li>
+            <li>UHD SDR Pro Res 422 HQ - OAR</li>
+            <li>UHD SDR Pro Res 422 HQ - 1.78</li>
+        </ul>
+
+        <h3>Company Y</h3>
+
+        <ul>
+            <li>4K DCP (Clone)</li>
+            <li>HD SDR Pro Res 422 HQ - OAR</li>
+            <li>SDR UHD IMF</li>
+            <li>HDR UHD IMF</li>
+        </ul>
+
+        <h3>Screen Australia</h3>
+
+        <ul>
+            <li>HD Pro Res 422 HQ (Roadshow Clone)</li>
+            <li>HD H264</li>
+            <li>DVD Master (plus 3 copies)</li>
+        </ul>
+
+        <h3>Film Victoria</h3>
+
+        <ul>
+            <li>HD H264</li>
+        </ul>
+
+        <h3>NFSA</h3>
+
+        <ul>
+            <li>HD Pro Res 422 HQ (Clone)</li>
+            <li>4K Unencrypted DCP</li>
+            <li>4K DSM</li>
+            <li>4K DCDM</li>
+        </ul>
+
+        <h3>Producer</h3>
+
+        <ul>
+            <li>4K DCP (clone)</li>
+            <li>2K Unencrypted dCP</li>
+            <li>All Pro Res Masters</li>
+        </ul>
+
+        <hr>
+
+        <h2>Appendix 1 - Dailies Frame IO Distribution List</h2>
+
+        <p>Editorial to notify distribution list when there is new content to view on Frame IO.</p>
+
+        <p><strong>TBC</strong></p>
+
+        <h2>Appendix 2 - QC / Clearance Distribution List</h2>
+
+        <p><strong>TBC</strong></p>
+
+    </div>
+
+    <script>
+        // Camera management
+        let nextCameraLetter = 'E';
+        let cameraCount = 4; // A, B, C, D
+
+        function getNextCameraLetter() {
+            const letter = nextCameraLetter;
+            nextCameraLetter = String.fromCharCode(nextCameraLetter.charCodeAt(0) + 1);
+            return letter;
+        }
+
+        function addCamera() {
+            const cameraId = getNextCameraLetter();
+            cameraCount++;
+
+            const container = document.getElementById('cameras-container');
+
+            const cameraDiv = document.createElement('div');
+            cameraDiv.className = 'camera-spec';
+            cameraDiv.id = `camera-${cameraId}`;
+            cameraDiv.setAttribute('data-camera-id', cameraId);
+
+            cameraDiv.innerHTML = `
+                <div class="camera-header">
+                    <h4>${cameraId} – Custom Camera</h4>
+                    <button class="btn btn-danger btn-remove" onclick="removeCamera('${cameraId}')">Remove Camera</button>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Camera Type:</span>
+                    <select id="cam${cameraId}-type" onchange="updateCameraType('${cameraId}')">
+                        <option value="venice">Sony Venice 2</option>
+                        <option value="ronin">DJI Ronin 4D</option>
+                        <option value="custom">Custom Camera</option>
+                    </select>
+                </div>
+                <div id="cam${cameraId}-specs">
+                    <!-- Specs will be populated based on camera type -->
+                </div>
+            `;
+
+            container.appendChild(cameraDiv);
+
+            // Initialize with Venice specs
+            updateCameraType(cameraId);
+
+            // Add calculator card
+            addCalculatorCard(cameraId);
+
+            // Save camera state
+            saveCameraState();
+
+            // Update calculations
+            updateCalculations();
+        }
+
+        function removeCamera(cameraId) {
+            if (confirm(`Are you sure you want to remove Camera ${cameraId}?`)) {
+                const cameraDiv = document.getElementById(`camera-${cameraId}`);
+                if (cameraDiv) {
+                    cameraDiv.remove();
+                    cameraCount--;
+                }
+
+                // Remove calculator card
+                const calcCard = document.getElementById(`calc-card-${cameraId}`);
+                if (calcCard) {
+                    calcCard.remove();
+                }
+
+                // Save camera state
+                saveCameraState();
+
+                // Update calculations
+                updateCalculations();
+            }
+        }
+
+        function saveCameraState() {
+            const cameraState = {
+                nextLetter: nextCameraLetter,
+                cameras: []
+            };
+
+            // Save all cameras with their configurations
+            document.querySelectorAll('.camera-spec[data-camera-id]').forEach(camDiv => {
+                const cameraId = camDiv.getAttribute('data-camera-id');
+                const typeElement = document.getElementById(`cam${cameraId}-type`);
+
+                const camera = {
+                    id: cameraId,
+                    type: typeElement ? typeElement.value : (cameraId === 'A' || cameraId === 'B' ? 'venice' : cameraId === 'C' ? 'ronin' : 'custom'),
+                    isDefault: ['A', 'B', 'C', 'D'].includes(cameraId)
+                };
+
+                cameraState.cameras.push(camera);
+            });
+
+            localStorage.setItem('wildernessWorkflowCameras', JSON.stringify(cameraState));
+            console.log('Camera state saved', cameraState);
+        }
+
+        function loadCameraState() {
+            const saved = localStorage.getItem('wildernessWorkflowCameras');
+            if (!saved) return;
+
+            try {
+                const cameraState = JSON.parse(saved);
+                nextCameraLetter = cameraState.nextLetter || 'E';
+
+                // Remove non-default cameras that were removed
+                const savedCameraIds = cameraState.cameras.map(c => c.id);
+                document.querySelectorAll('.camera-spec[data-camera-id]').forEach(camDiv => {
+                    const cameraId = camDiv.getAttribute('data-camera-id');
+                    if (!savedCameraIds.includes(cameraId) && !['A', 'B', 'C', 'D'].includes(cameraId)) {
+                        camDiv.remove();
+                        const calcCard = document.getElementById(`calc-card-${cameraId}`);
+                        if (calcCard) calcCard.remove();
+                    }
+                });
+
+                // Add cameras that were added
+                cameraState.cameras.forEach(camera => {
+                    if (!camera.isDefault && !document.getElementById(`camera-${camera.id}`)) {
+                        // Recreate the camera
+                        const container = document.getElementById('cameras-container');
+                        const cameraDiv = document.createElement('div');
+                        cameraDiv.className = 'camera-spec';
+                        cameraDiv.id = `camera-${camera.id}`;
+                        cameraDiv.setAttribute('data-camera-id', camera.id);
+
+                        cameraDiv.innerHTML = `
+                            <div class="camera-header">
+                                <h4>${camera.id} – Custom Camera</h4>
+                                <button class="btn btn-danger btn-remove" onclick="removeCamera('${camera.id}')">Remove Camera</button>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Camera Type:</span>
+                                <select id="cam${camera.id}-type" onchange="updateCameraType('${camera.id}')">
+                                    <option value="venice" ${camera.type === 'venice' ? 'selected' : ''}>Sony Venice 2</option>
+                                    <option value="ronin" ${camera.type === 'ronin' ? 'selected' : ''}>DJI Ronin 4D</option>
+                                    <option value="custom" ${camera.type === 'custom' ? 'selected' : ''}>Custom Camera</option>
+                                </select>
+                            </div>
+                            <div id="cam${camera.id}-specs">
+                                <!-- Specs will be populated based on camera type -->
+                            </div>
+                        `;
+
+                        container.appendChild(cameraDiv);
+                        updateCameraType(camera.id);
+                        addCalculatorCard(camera.id);
+                    }
+                });
+
+                // Remove default cameras if they were removed
+                ['A', 'B', 'C', 'D'].forEach(defaultId => {
+                    if (!savedCameraIds.includes(defaultId)) {
+                        const camDiv = document.getElementById(`camera-${defaultId}`);
+                        if (camDiv) {
+                            camDiv.remove();
+                            const calcCard = document.getElementById(`calc-card-cam${defaultId}`);
+                            if (calcCard) calcCard.remove();
+                        }
+                    }
+                });
+
+                console.log('Camera state loaded', cameraState);
+            } catch (e) {
+                console.error('Error loading camera state:', e);
+            }
+        }
+
+        function updateCameraType(cameraId) {
+            const typeSelect = document.getElementById(`cam${cameraId}-type`);
+            const specsDiv = document.getElementById(`cam${cameraId}-specs`);
+            const type = typeSelect ? typeSelect.value : 'venice';
+
+            if (type === 'venice') {
+                specsDiv.innerHTML = `
+                    <div class="spec-item">
+                        <span class="spec-label">Format:</span>
+                        <select id="cam${cameraId}-format">
+                            <option value="x-ocn-xt">X-OCN XT (Extreme)</option>
+                            <option value="x-ocn-st" selected>X-OCN ST (Standard)</option>
+                            <option value="x-ocn-lt">X-OCN LT (Light)</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Sensor Type:</span>
+                        <select id="cam${cameraId}-sensor">
+                            <option value="8k" selected>8K Sensor (8640 x 5760)</option>
+                            <option value="6k">6K Sensor (6048 x 4032)</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Colour Science:</span>
+                        <select id="cam${cameraId}-color">
+                            <option value="sgamut3cine" selected>S-Gamut3.Cine / S-Log3</option>
+                            <option value="sgamut3">S-Gamut3 / S-Log3</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Base ISO:</span>
+                        <select id="cam${cameraId}-iso">
+                            <option value="800" selected>ISO 800 (Low Base)</option>
+                            <option value="3200">ISO 3200 (High Base) - 8K</option>
+                            <option value="500">ISO 500 (Low Base) - 6K</option>
+                            <option value="2500">ISO 2500 (High Base) - 6K</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">LUT:</span>
+                        <select id="cam${cameraId}-lut">
+                            <option value="s709" selected>s709 (Standard Cinema Look)</option>
+                            <option value="r709">R709(800%) (High Contrast)</option>
+                            <option value="custom-cube">Custom .cube file</option>
+                            <option value="custom-art">Custom .ART file</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Frame Rate:</span>
+                        <select id="cam${cameraId}-framerate">
+                            <option value="23.98">23.98 fps</option>
+                            <option value="24" selected>24 fps</option>
+                            <option value="25">25 fps</option>
+                            <option value="29.97">29.97 fps</option>
+                            <option value="30">30 fps</option>
+                            <option value="47.95">47.95 fps</option>
+                            <option value="48">48 fps</option>
+                            <option value="50">50 fps</option>
+                            <option value="59.94">59.94 fps</option>
+                            <option value="60">60 fps</option>
+                            <option value="72">72 fps (HFR)</option>
+                            <option value="90">90 fps (HFR)</option>
+                            <option value="96">96 fps (HFR)</option>
+                            <option value="100">100 fps (HFR)</option>
+                            <option value="120">120 fps (HFR)</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">ND Filter:</span>
+                        <select id="cam${cameraId}-nd">
+                            <option value="clear" selected>Clear (No ND)</option>
+                            <option value="0.3">0.3 (1 stop)</option>
+                            <option value="0.6">0.6 (2 stops)</option>
+                            <option value="0.9">0.9 (3 stops)</option>
+                            <option value="1.2">1.2 (4 stops)</option>
+                            <option value="1.5">1.5 (5 stops)</option>
+                            <option value="1.8">1.8 (6 stops)</option>
+                            <option value="2.1">2.1 (7 stops)</option>
+                            <option value="2.4">2.4 (8 stops)</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Dynamic Range:</span> 16 stops
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Recording Media:</span> AXS Memory Card
+                    </div>
+                `;
+            } else if (type === 'ronin') {
+                specsDiv.innerHTML = `
+                    <div class="spec-item">
+                        <span class="spec-label">Sensor Type:</span>
+                        <select id="cam${cameraId}-sensor">
+                            <option value="x9-8k" selected>X9-8K (35mm Full-Frame)</option>
+                            <option value="x9-6k">X9-6K (35mm Full-Frame)</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Recording Format:</span>
+                        <select id="cam${cameraId}-format">
+                            <option value="prores-raw-hq">Apple ProRes RAW HQ</option>
+                            <option value="prores-raw" selected>Apple ProRes RAW</option>
+                            <option value="prores-4444xq">Apple ProRes 4444 XQ</option>
+                            <option value="prores-422hq">Apple ProRes 422 HQ</option>
+                            <option value="prores-422lt">Apple ProRes 422 LT</option>
+                            <option value="h264">H.264 (4:2:0 10-bit)</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Colour Science:</span>
+                        <select id="cam${cameraId}-color">
+                            <option value="dlog" selected>D-Log</option>
+                            <option value="rec709">Rec.709</option>
+                            <option value="hlg">HLG</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Native ISO:</span>
+                        <select id="cam${cameraId}-iso">
+                            <option value="800-4000" selected>ISO 800/4000 (with Dynamic Range Expansion)</option>
+                            <option value="320-1600">ISO 320/1600 (Standard)</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Frame Rate:</span>
+                        <select id="cam${cameraId}-framerate">
+                            <option value="23.976">23.976 fps</option>
+                            <option value="24" selected>24 fps</option>
+                            <option value="25">25 fps</option>
+                            <option value="29.97">29.97 fps</option>
+                            <option value="30">30 fps</option>
+                            <option value="48">48 fps</option>
+                            <option value="50">50 fps</option>
+                            <option value="59.94">59.94 fps</option>
+                            <option value="60">60 fps</option>
+                            <option value="72">72 fps (HFR)</option>
+                            <option value="96">96 fps (HFR)</option>
+                            <option value="100">100 fps (HFR)</option>
+                            <option value="120">120 fps (HFR)</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">ND Filter:</span>
+                        <select id="cam${cameraId}-nd">
+                            <option value="clear" selected>Clear (No ND)</option>
+                            <option value="0.3">2 (0.3) - 1 stop</option>
+                            <option value="0.6">4 (0.6) - 2 stops</option>
+                            <option value="0.9">8 (0.9) - 3 stops</option>
+                            <option value="1.2">16 (1.2) - 4 stops</option>
+                            <option value="1.5">32 (1.5) - 5 stops</option>
+                            <option value="1.8">64 (1.8) - 6 stops</option>
+                            <option value="2.1">128 (2.1) - 7 stops</option>
+                            <option value="2.4">256 (2.4) - 8 stops</option>
+                            <option value="2.7">512 (2.7) - 9 stops</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Lens Mount:</span>
+                        <select id="cam${cameraId}-mount">
+                            <option value="dl" selected>DL Mount</option>
+                            <option value="l">L Mount</option>
+                            <option value="m">M Mount</option>
+                            <option value="e">E Mount</option>
+                            <option value="pl">PL Mount</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Recording Media:</span>
+                        <select id="cam${cameraId}-media">
+                            <option value="prossd" selected>DJI PROSSD 1TB</option>
+                            <option value="cfexpress">CFexpress 2.0 Type B</option>
+                            <option value="usb-ssd">USB-C SSD</option>
+                        </select>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Dynamic Range:</span> 14+ stops
+                    </div>
+                `;
+            } else {
+                specsDiv.innerHTML = `
+                    <div class="spec-item">
+                        <span class="spec-label">Camera Model:</span>
+                        <input type="text" id="cam${cameraId}-model" placeholder="Enter camera model" style="padding: 6px 12px; border: 1px solid #3498db; border-radius: 4px; width: 300px;">
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Format:</span>
+                        <input type="text" id="cam${cameraId}-custom-format" placeholder="e.g., RAW, ProRes" style="padding: 6px 12px; border: 1px solid #3498db; border-radius: 4px; width: 300px;">
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Resolution:</span>
+                        <input type="text" id="cam${cameraId}-resolution" placeholder="e.g., 4096 x 2160" style="padding: 6px 12px; border: 1px solid #3498db; border-radius: 4px; width: 300px;">
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Frame Rate:</span>
+                        <input type="number" id="cam${cameraId}-framerate" value="24" style="padding: 6px 12px; border: 1px solid #3498db; border-radius: 4px; width: 100px;"> fps
+                    </div>
+                `;
+            }
+
+            // Add event listeners to new dropdowns
+            addEventListenersToCamera(cameraId);
+        }
+
+        function addEventListenersToCamera(cameraId) {
+            const selectors = ['format', 'sensor', 'framerate', 'type'];
+            selectors.forEach(selector => {
+                const element = document.getElementById(`cam${cameraId}-${selector}`);
+                if (element) {
+                    element.addEventListener('change', updateCalculations);
+                }
+            });
+        }
+
+        function addCalculatorCard(cameraId) {
+            const calcGrid = document.querySelector('.calculator-grid');
+
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'calculator-card';
+            cardDiv.id = `calc-card-${cameraId}`;
+
+            cardDiv.innerHTML = `
+                <h4>Camera ${cameraId} - Custom Camera</h4>
+                <div class="data-label">Data Per Hour</div>
+                <div class="data-value" id="calc-cam${cameraId}-hour">--</div>
+                <div class="data-detail">
+                    <strong>Bitrate:</strong> <span id="calc-cam${cameraId}-bitrate">--</span><br>
+                    <strong>Per Minute:</strong> <span id="calc-cam${cameraId}-minute">--</span><br>
+                    <strong>Per 10 Hours:</strong> <span id="calc-cam${cameraId}-10hour">--</span>
+                </div>
+            `;
+
+            // Insert before the audio card (last card)
+            const audioCard = calcGrid.lastElementChild;
+            calcGrid.insertBefore(cardDiv, audioCard);
+        }
+
+        // Data rate calculation functions
+        function calculateVeniceDataRate(format, sensor, framerate) {
+            // Base bitrates in Mbps for X-OCN formats at 24fps
+            const baseRates = {
+                '8k': {
+                    'x-ocn-xt': 2880,  // X-OCN XT 8K
+                    'x-ocn-st': 2160,  // X-OCN ST 8K
+                    'x-ocn-lt': 1440   // X-OCN LT 8K
+                },
+                '6k': {
+                    'x-ocn-xt': 1080,  // X-OCN XT 6K
+                    'x-ocn-st': 810,   // X-OCN ST 6K
+                    'x-ocn-lt': 540    // X-OCN LT 6K
+                }
+            };
+
+            const baseFPS = 24;
+            const baseRate = baseRates[sensor][format];
+            const scaledRate = baseRate * (parseFloat(framerate) / baseFPS);
+
+            return scaledRate; // Returns Mbps
+        }
+
+        function calculateRoninDataRate(format, sensor, framerate) {
+            // Base bitrates in Mbps for different ProRes formats at 24fps
+            const baseRates = {
+                'prores-raw-hq': {
+                    'x9-8k': 4800,
+                    'x9-6k': 2700
+                },
+                'prores-raw': {
+                    'x9-8k': 3200,
+                    'x9-6k': 1800
+                },
+                'prores-4444xq': {
+                    'x9-8k': 3760,
+                    'x9-6k': 2115
+                },
+                'prores-422hq': {
+                    'x9-8k': 1880,
+                    'x9-6k': 1057
+                },
+                'prores-422lt': {
+                    'x9-8k': 940,
+                    'x9-6k': 528
+                },
+                'h264': {
+                    'x9-8k': 200,
+                    'x9-6k': 150
+                }
+            };
+
+            const baseFPS = 24;
+            const baseRate = baseRates[format][sensor];
+            const scaledRate = baseRate * (parseFloat(framerate) / baseFPS);
+
+            return scaledRate; // Returns Mbps
+        }
+
+        function calculateAudioDataRate(audioFormat, channels) {
+            // Audio bitrates in kbps per channel
+            const rates = {
+                'bwav-24-48': 1152,   // 24-bit * 48kHz
+                'bwav-24-96': 2304,   // 24-bit * 96kHz
+                'bwav-32-48': 1536,   // 32-bit * 48kHz
+                'lpcm-24-48': 1152,
+                'lpcm-16-48': 768
+            };
+
+            const ratePerChannel = rates[audioFormat];
+            const totalRate = (ratePerChannel * parseInt(channels)) / 1000; // Convert to Mbps
+
+            return totalRate; // Returns Mbps
+        }
+
+        function formatDataSize(mbps) {
+            // Convert Mbps to GB per hour
+            const gbPerHour = (mbps * 3600) / 8 / 1024;
+            return gbPerHour;
+        }
+
+        function formatDisplay(gbPerHour) {
+            if (gbPerHour < 1) {
+                return (gbPerHour * 1024).toFixed(1) + ' MB/hour';
+            } else {
+                return gbPerHour.toFixed(2) + ' GB/hour';
+            }
+        }
+
+        function updateCalculations() {
+            // Get project settings
+            const projectFramerate = document.getElementById('project-framerate').value;
+            const audioFormat = document.getElementById('project-audio').value;
+            const audioChannels = document.getElementById('project-audio-channels').value;
+
+            let totalGBPerHour = 0;
+
+            // Get all camera elements
+            const cameraElements = document.querySelectorAll('.camera-spec[data-camera-id]');
+
+            cameraElements.forEach(camElement => {
+                const cameraId = camElement.getAttribute('data-camera-id');
+                const typeElement = document.getElementById(`cam${cameraId}-type`);
+
+                // Determine camera type (Venice for A & B, Ronin for C, check type selector for others)
+                let isVenice = false;
+                let isRonin = false;
+
+                if (cameraId === 'A' || cameraId === 'B') {
+                    isVenice = true;
+                } else if (cameraId === 'C') {
+                    isRonin = true;
+                } else if (typeElement) {
+                    const type = typeElement.value;
+                    isVenice = (type === 'venice');
+                    isRonin = (type === 'ronin');
+                }
+
+                let bitrate = 0;
+                const formatElement = document.getElementById(`cam${cameraId}-format`);
+                const sensorElement = document.getElementById(`cam${cameraId}-sensor`);
+                const framerateElement = document.getElementById(`cam${cameraId}-framerate`);
+
+                if (formatElement && sensorElement && framerateElement) {
+                    const format = formatElement.value;
+                    const sensor = sensorElement.value;
+                    const framerate = framerateElement.value;
+
+                    if (isVenice) {
+                        bitrate = calculateVeniceDataRate(format, sensor, framerate);
+                    } else if (isRonin) {
+                        bitrate = calculateRoninDataRate(format, sensor, framerate);
+                    }
+
+                    const gbPerHour = formatDataSize(bitrate);
+                    totalGBPerHour += gbPerHour;
+
+                    // Update display
+                    const bitrateEl = document.getElementById(`calc-cam${cameraId}-bitrate`);
+                    const hourEl = document.getElementById(`calc-cam${cameraId}-hour`);
+                    const minuteEl = document.getElementById(`calc-cam${cameraId}-minute`);
+                    const hour10El = document.getElementById(`calc-cam${cameraId}-10hour`);
+
+                    if (bitrateEl) bitrateEl.textContent = bitrate.toFixed(0) + ' Mbps';
+                    if (hourEl) hourEl.textContent = formatDisplay(gbPerHour);
+                    if (minuteEl) minuteEl.textContent = (gbPerHour / 60).toFixed(2) + ' GB';
+                    if (hour10El) hour10El.textContent = (gbPerHour * 10).toFixed(1) + ' GB';
+                }
+            });
+
+            // Calculate Audio
+            const audioBitrate = calculateAudioDataRate(audioFormat, audioChannels);
+            const audioGBPerHour = formatDataSize(audioBitrate);
+
+            document.getElementById('calc-audio-bitrate').textContent = audioBitrate.toFixed(2) + ' Mbps';
+            document.getElementById('calc-audio-hour').textContent = formatDisplay(audioGBPerHour);
+            document.getElementById('calc-audio-minute').textContent = (audioGBPerHour / 60).toFixed(3) + ' GB';
+            document.getElementById('calc-audio-10hour').textContent = (audioGBPerHour * 10).toFixed(2) + ' GB';
+
+            // Calculate Totals
+            totalGBPerHour += audioGBPerHour;
+            const totalPerDay = totalGBPerHour * 10;
+            const totalPerWeek = totalPerDay * 5;
+
+            // Get shooting ratio
+            const shootingRatioElement = document.getElementById('project-shooting-ratio');
+            const shootingRatio = shootingRatioElement ? parseFloat(shootingRatioElement.value) : 10;
+
+            // Calculate storage with shooting ratio
+            // Shooting ratio means you shoot X times more than final runtime
+            // So if ratio is 10:1, only 1/10th of footage makes the final cut
+            // This means you need to divide by the ratio to get actual storage for final project
+            const totalPerWeekWithRatio = totalPerWeek / shootingRatio;
+
+            document.getElementById('calc-total-hour').textContent = totalGBPerHour.toFixed(2) + ' GB/hour';
+            document.getElementById('calc-total-day').textContent = totalPerDay.toFixed(1) + ' GB';
+
+            // Display shooting ratio
+            document.getElementById('calc-shooting-ratio').textContent = shootingRatio + ':1';
+
+            // Display weekly raw footage (all footage shot)
+            if (totalPerWeek >= 1024) {
+                document.getElementById('calc-total-week').textContent = (totalPerWeek / 1024).toFixed(2) + ' TB';
+            } else {
+                document.getElementById('calc-total-week').textContent = totalPerWeek.toFixed(1) + ' GB';
+            }
+
+            // Display storage required (reduced by shooting ratio)
+            if (totalPerWeekWithRatio >= 1024) {
+                document.getElementById('calc-total-week-ratio').textContent = (totalPerWeekWithRatio / 1024).toFixed(2) + ' TB';
+            } else {
+                document.getElementById('calc-total-week-ratio').textContent = totalPerWeekWithRatio.toFixed(1) + ' GB';
+            }
+        }
+
+        // Save and Load Settings from LocalStorage
+        function saveSettings() {
+            const settings = {};
+
+            // Get all select elements
+            const allSelects = document.querySelectorAll('select');
+            allSelects.forEach(select => {
+                if (select.id) {
+                    settings[select.id] = select.value;
+                }
+            });
+
+            // Save camera configuration
+            const cameras = [];
+            document.querySelectorAll('.camera-spec[data-camera-id]').forEach(cam => {
+                cameras.push(cam.getAttribute('data-camera-id'));
+            });
+            settings._cameras = cameras;
+
+            localStorage.setItem('wildernessWorkflowSettings', JSON.stringify(settings));
+            console.log('Settings saved to browser storage');
+        }
+
+        function loadSettings() {
+            const saved = localStorage.getItem('wildernessWorkflowSettings');
+            if (!saved) return;
+
+            try {
+                const settings = JSON.parse(saved);
+
+                // Restore all select values
+                Object.keys(settings).forEach(key => {
+                    if (key !== '_cameras') {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            element.value = settings[key];
+                        }
+                    }
+                });
+
+                console.log('Settings loaded from browser storage');
+                updateCalculations();
+            } catch (e) {
+                console.error('Error loading settings:', e);
+            }
+        }
+
+        function exportSettings() {
+            const exportData = {
+                settings: {},
+                cameras: {}
+            };
+
+            // Export all select values
+            const allSelects = document.querySelectorAll('select');
+            allSelects.forEach(select => {
+                if (select.id) {
+                    exportData.settings[select.id] = select.value;
+                }
+            });
+
+            // Export camera state
+            const cameraStateStr = localStorage.getItem('wildernessWorkflowCameras');
+            if (cameraStateStr) {
+                exportData.cameras = JSON.parse(cameraStateStr);
+            }
+
+            // Add metadata
+            exportData.metadata = {
+                exportDate: new Date().toISOString(),
+                version: '1.0'
+            };
+
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+
+            // Generate filename with date
+            const dateStr = new Date().toISOString().split('T')[0];
+            link.download = `wilderness_workflow_${dateStr}.json`;
+
+            link.click();
+            URL.revokeObjectURL(url);
+
+            console.log('Settings and camera configuration exported');
+        }
+
+        function importSettings(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importData = JSON.parse(e.target.result);
+
+                    // Handle legacy format (just settings object)
+                    const settings = importData.settings || importData;
+
+                    // Import camera state if available
+                    if (importData.cameras) {
+                        localStorage.setItem('wildernessWorkflowCameras', JSON.stringify(importData.cameras));
+                        // Reload page to apply camera changes
+                        if (confirm('Camera configuration will be imported. Page will reload to apply changes. Continue?')) {
+                            location.reload();
+                        }
+                        return;
+                    }
+
+                    // Import settings
+                    Object.keys(settings).forEach(key => {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            element.value = settings[key];
+                        }
+                    });
+
+                    saveSettings();
+                    updateCalculations();
+                    alert('Settings imported successfully!');
+                } catch (err) {
+                    alert('Error importing settings: ' + err.message);
+                }
+            };
+            reader.readAsText(file);
+
+            // Reset file input
+            event.target.value = '';
+        }
+
+        // Add event listeners to all relevant dropdowns
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load camera state first (restore added/removed cameras)
+            loadCameraState();
+
+            // Then load saved settings for all dropdowns
+            loadSettings();
+
+            const selects = [
+                'project-framerate', 'project-audio', 'project-audio-channels', 'project-shooting-ratio',
+                'camA-format', 'camA-sensor', 'camA-framerate',
+                'camB-format', 'camB-sensor', 'camB-framerate',
+                'camC-format', 'camC-sensor', 'camC-framerate'
+            ];
+
+            selects.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('change', function() {
+                        updateCalculations();
+                        saveSettings();
+                    });
+                }
+            });
+
+            // Auto-save on all select changes
+            document.querySelectorAll('select').forEach(select => {
+                select.addEventListener('change', saveSettings);
+            });
+
+            // Initial calculation
+            updateCalculations();
+        });
+    </script>
+</body>
+</html>

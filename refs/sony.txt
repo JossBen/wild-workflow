@@ -1,0 +1,1941 @@
+Wilderness - Post Workflow
+Create a post workflow document based on one from a previous project.
+
+
+
+
+
+
+PDF to markdown conversion
+Last message 3 minutes ago
+Database schema normalization
+Last message 1 day ago
+Document update form
+Last message 1 day ago
+Document editing issue
+Last message 2 days ago
+Database web interface design
+Last message 3 days ago
+Instructions
+Add instructions to tailor Claude’s responses
+
+Files
+2% of project capacity used
+
+Sony_CineAlta_WF_Guide_v1.0.pdf
+1,907 lines
+
+pdf
+
+
+
+Sony_CineAlta_WF_Guide_v1.0.pdf
+79.33 KB •1,907 lines
+Formatting may be inconsistent from source
+ 2024 Sony Corporation. All rights reserved.
+CineAlta Workflow
+Guide
+White Paper – v1.0 (November 2024)
+
+1
+CONTENTS
+Introduction................................................................................................ 3
+Shooting ..................................................................................................... 4
+36x24mm Full-Frame Sensor for Cinema ............................................................................. 5
+Dual Base ISO............................................................................................................................... 12
+S-Log3 / S-Gamut3 .................................................................................................................... 17
+Look ................................................................................................................................................. 20
+Recording Format (X-OCN) ...................................................................................................... 31
+Recording Media (AXS / CFexpress Memory Card) .......................................................... 34
+Flexible Lens Mount (PL / E) .................................................................................................... 37
+Built-in ND Filter .......................................................................................................................... 41
+Image Stabilization ..................................................................................................................... 43
+Auto Focus ..................................................................................................................................... 46
+VENICE Extension System 2 .................................................................................................... 48
+Remote Control ............................................................................................................................ 52
+In-Camera VFX............................................................................................................................. 58
+Dailies ....................................................................................................... 62
+4K HDR On-set Monitoring ....................................................................................................... 63
+Offload & Backup ......................................................................................................................... 64
+Safe Memory Card Eraser ......................................................................................................... 67
+Data Recovery .............................................................................................................................. 69
+Editorial & Conform ................................................................................... 75
+Viewing & Transcoding .............................................................................................................. 76
+Offline Editing & Re-link ............................................................................................................ 77
+Delivery Format (Frame Line) ................................................................................................. 79
+Color Grading & VFX .................................................................................. 82
+ACES Workflow............................................................................................................................. 83
+HDR Workflow .............................................................................................................................. 88
+VFX Workflow ............................................................................................................................... 89
+
+2
+Appendix .................................................................................................. 90
+Metadata (X-OCN)....................................................................................................................... 91
+Anamorphic De-Squeeze Ratio (VENICE 2) ........................................................................ 95
+Genlock Input ............................................................................................................................... 98
+Camera Menu Simulator............................................................................................................ 99
+File Size Calculator (VENICE 2) ............................................................................................ 100
+
+3
+INTRODUCTION
+Since 2000, Sony has been working on developing Digital Motion Picture Camera
+systems for the industry under the “CineAlta” line for more than 20 years. Starting
+with the first CineAlta camera HDW-F900, many models have been introduced to
+the market until now.
+During the period, Sony developed a lot of key technologies such as 24p, RGB444
+system, Super35mm image sensor, 4K and 8K high resolution. These have been
+contributing to the high-end content creation market such as feature film, TV
+drama and commercials.
+In 2017, we launched the latest cinema camera VENICE equipped with 36x24 Full-
+Frame CMOS image sensor specifically designed for high-end cinematography. We
+evolved and launched the successor VENICE 2 in 2022, reflecting various requests
+received from the market. Then, BURANO has been launched in 2024 as a new
+addition to CineAlta family – that is ideal for single-camera operators and small
+crews.
+This document provides an overview of the CineAlta workflow that has already
+been utilized by many users – explaining how to work with the latest models
+VENICE 2 and BURANO. The content is planned to be continuously updated as
+necessary.
+
+4
+SHOOTING
+• 36x24mm Full-Frame Sensor for Cinema
+• Dual Base ISO
+• S-Log3 / S-Gamut3
+• Look
+• Recording Format (X-OCN)
+• Recording Media (AXS / CFexpress Memory Card)
+• Flexible Lens Mount (PL / E)
+• Built-in ND Filter
+• Image Stabilization
+• Auto Focus
+• VENICE Extension System 2
+• Remote Control
+• In-Camera VFX
+
+5
+36x24mm Full-Frame Sensor for Cinema
+VENICE 2 (8K/6K) features one of two 36x24mm full-frame image sensors,
+designed specifically for the demands and performance of high-end cinematography.
+Each offers remarkable sensitivity, latitude and color rendition, and because the
+sensor blocks are interchangeable, users can easily switch between sensors—without
+any extra firmware—and can even use the sensor from their original VENICE.
+The new 8K sensor can capture images up to a maximum pixels of 8640 x 5760,
+while the established 6K sensor offers up to 6048 x 4032. Both offer powerful
+oversampling for incredible 4K images.
+• Full-Frame full width 36mm 8K and 6K
+In full-frame, you can use the full width of the sensors (8640 or 6048 pixels)
+for widescreen spherical 2.39:1 or Large Format Scope. Full-Frame can be
+used creatively in several ways – for example, to allow for extra shallow depth
+of field or super-wide shooting.
+• Super35 full height 2.0x squeeze anamorphic
+For anamorphic shooting and production, Super35 full height 2x squeeze
+anamorphic is supported.
+• Super35 17:9 and 16:9
+These popular imager modes have native support in VENICE 2, and the 8K
+sensor makes it possible to capture 5.8K footage in these modes. Current
+Super35mm PL mount lenses can be used as well.
+
+6
+VENICE 2 (8K)
+
+7
+VENICE 2 (6K)
+
+8
+BURANO also has a large 36x24mm full-frame image sensor that delivers high-
+quality images and superb rendition with wide latitude and a rich color gamut. It
+achieves the beautiful bokeh and wide-angle shooting that only a full-frame sensor
+can provide.
+8K image quality with a maximum pixels of 8632 x 4856 and, through oversampling,
+it can output high-quality 4K content.
+
+9
+6K 17:9/16:9 Full-Frame crop mode on BURANO
+This is one of the most popular imager scan modes on BURANO. Because it can bring
+the following benefits at the same time :
+- Superior image quality with near FF 8.6K scan down-sampled to 6K for recording
+(only about 1.07x crop)
+- Smaller file size (compared to FF 8.6K scan)
+- Higher frame rate (up to 60 fps)
+
+10
+Fast readout with stacked CMOS structure
+VENICE 2 and BURANO have equipped a newly developed memory-integrated Full-
+Frame CMOS sensor dedicated for cinema camera.
+By adopting a “stacked structure” that allows the high-speed signal processing circuit
+to be placed in a separate layer from the pixel area, the processing circuit section
+has been greatly expanded, and the speed of signal processing has improved
+dramatically.
+Furthermore, an integral memory is mounted on the back of the sensor. The sensor
+outputs a large amount of signals, which are temporarily stored in the integral
+memory to prevent congestion. This innovative sensor structure has achieved a data
+readout speed much faster than the conventional back-illuminated CMOS sensor.
+The stacked CMOS sensors dramatically reduce the motion distortion (rolling
+shutter effect) that often occurs when capturing fast-moving subjects. By scanning
+the entire pixel area from top to bottom at high speed, the timing difference in
+readout between the top and bottom of the image is minimized.
+
+11
+In fact, the readout speed of CMOS sensor varies depending on image scan mode.
+For shooting situation on BURANO where the rolling shutter performance is critical,
+we would recommend using 4K 17:9 Super35 crop and 3.8K 16:9 Full Frame
+crop* image scan modes that offer relatively fast readout speed on this model.
+*Planned to support on Ver 2.0 (March 2025 or later)
+
+12
+Dual Base ISO
+Digital imaging sensors perform best when EI (Exposure Index) is set to their native,
+Base ISO. It’s at this Base ISO value you will realize a very clean image with the best
+balance of good signal to noise ratio and wide dynamic range. This is because at the
+Base ISO setting, there is no amplification, or gain (voltage), being added to the
+signal coming from the sensor.
+Therefore, both VENICE 2 and BURANO camera’s full-frame sensor has what is
+termed Dual Base ISO. It means that the camera’s imaging sensor has two distinct
+sensitivities to light – one LOW at ISO 800* for higher light levels, and one HIGH at
+ISO 3200* for lower light levels.
+
+13
+At each Base ISO level, since there is no such amplification being added to the signal
+as explained above, the sensor captures the same, clean image. And as illustrated in
+the graph below, at each Base ISO, the sensor also captures same wide dynamic
+range with an equivalent ratio of stops of latitude above and below 18% grey – a
+total of 16 stops*.
+*In case of VENICE 2 (8K) and BURANO
+Dual Base ISO, and high Base ISO specifically, also pay dividends when it comes to
+High Frame Rate (HFR) shooting. Indeed, for HFR, sensitivity is a critical factor since
+each frame is exposed to light for an even shorter duration. As such, having a high
+Base ISO option of 3200 EI ensures high image quality even when shooting under
+more modest lighting packages.
+
+14
+VENICE 2 (8K)
+ISO 800
+ISO 3200
+
+15
+VENICE 2 (6K)
+ISO 500
+ISO 2500
+
+16
+BURANO
+This feature, this flexibility, greatly expands the creative options and practical
+applications available to cinematographers. So whether you are shooting slower
+anamorphic lenses in low light, or faster spherical lenses with low levels of practical
+lighting, or during the day on location under brighter conditions and using Internal
+ND of VENICE 2 or BURANO, Dual Base ISO makes it easier to achieve clean images
+with a very wide dynamic range in wide range of lighting conditions.
+
+17
+S-Log3 / S-Gamut3
+The evolution of camera technology means that the sensors in modern cameras are
+now capable of matching, or even surpassing, the quality of 35mm film.
+The problem is that existing video formats don’t support the vast amount of
+information captured by a modern camera sensor. The result : reduced dynamic
+range and color information.
+S-Log3 is a tonal curve designed to record and transmit as much of the information
+recorded by your camera’s sensor as possible. S-Log3 breathes life into your images
+by preserving dynamic range recorded by the sensor. Then in post-production, you
+create the image you want as part of the grading process, with greater artistic control
+over the finished product.
+S-Log3 is best balanced tonal curve for Sony’s image sensors to achieve low noise,
+shadow reproduction, rich mid-tones and high dynamic range.
+
+18
+Both VENICE 2 and BURANO support two color grading spaces – “S-Log3 / S-
+Gamut3.Cine” and “S-Log3 / S-Gamut3”.
+S-Gamut3.Cine is similar to native film scan which was used for TV production, film
+out digital cinema. Color reproduction is designed slightly wider than DCI-P3 to
+provide ample room for grading. The combination of S-Log3 and S-Gamut3.Cine
+have good compatibility with Cineon workflow.
+S-Gamut3 is a wider color space than S-Gamut3.Cine. It is best for ACES, ITU-R
+BT.2020 (Rec.2020) and camera data archiving use, as 8/10/12 bit code value.
+This color space is designed to support wide gamut displays while maintaining bit
+precision at the same time. It entirely covers ACES Primary 1 (AP1) and Rec.2020
+wide color gamut.
+
+19
+S-Log3 encoding in ProRes files (VENICE 2) and XAVC files (BURANO) is defined as
+Full range. This is based on Sony’s design concept that S-Log3 should be handled
+in Full range so that it can offer best performance of image quality – which is common
+not only to CineAlta but to all the other cameras.
+However, in response to customer feedback that some external devices (such as LUT
+boxes) need to receive the SDI output signal from the camera as Legal range,
+VENICE 2 (Ver 3.0 or later) provides an option to output a compressed signal as
+Legal range – by setting [LUT Select] menu to [Log(Legal)].
+When [Log] is selected in the menu, S-Log3 signal is output as Full range. This
+setting is available for applying to SDI 1/2, SDI 3/4, or Monitor output independently.
+As for BURANO, S-Log3 signal is always output as Full range, meaning there is no
+option to output a compressed signal as Legal range.
+VENICE 2 BURANO
+SDI output Full range 4 - 1019 4 - 1019
+Legal range* 64 – 940
+(0 IRE – 100 IRE)
+-
+Recording Full range 0 – 1023
+(7 IRE – 109 IRE)
+0 – 1023
+(7 IRE – 109 IRE)
+Legal range* - -
+*Not an S-Log3 signal but a compressed signal
+
+20
+Look
+s709 Overview
+S-Log3 / S-Gamut3.Cine or S-Gamut3 provide huge dynamic range and color space
+capabilities within the camera that can be used to capture material, that provides
+post-production with the widest creative freedom and control.
+However for those working on-set, in dailies and in post-production, some solution
+is required in order to review materials shot in S-Log3 / S-Gamut3.Cine or S-Gamut3
+on a standard monitor – designed to operate in conventional Rec.709 dynamic range
+and color space.
+Sony has introduced a series of looks as LUTs (Look Up Tables) for on-set monitoring
+while shooting, and for clip review afterwards.
+The conventional monitor look 709(800%) integrated into F65 and PMW-F55
+cameras has a high contrast tone curve and renders high saturated, vivid colors.
+With the introduction of VENICE, 709(800%) has been renamed as “R709”.
+Sony has also developed an original monitor look called “s709”. This renders imagery
+in subtle colors, with smooth color gradation and a softer low contrast tone curve –
+suitable for cinema and drama productions.
+s709 is close to the film color characteristics and allows directors, DOPs and
+cinematographers, to have the final film look on location and while shooting.
+
+21
+
+22
+s709 Characteristics
+s709 :
+s709 positions in the “low contrast” and “cinematic color” region in the right
+contrast-color chart. This look provides subtle and well-rendered facial tints, with a
+tone curve close to film characteristics, and low contrast.
+R709(800%) :
+This look provides high contrast with broadcast colors. With the introduction of
+VENICE this look has been renamed from “709(800)”.
+LC-709*, LC-709 Type A* :
+These look profiles provide low contrast with broadcast color.
+Cine+709* :
+Subtle colors, with high contrast and a tone curve close to film characteristics.
+*No preset on VENICE 2 / BURANO. Those can be applied on RAW Viewer.
+It is recommended that s709 is used for cinema and television drama production,
+while R709 is used for monitoring images that are closer to the actual look with
+high contrast compared to those of s709.
+
+23
+s709 has a low contrast tone curve to deliver soft tonal look in the image. The
+shadows and midtones have relatively natural responses, while the highlights are
+compressed to preserve wide latitude in the camera, and specular highlights in the
+scene.
+The diagrams below compare s709 and R709(800%) tone curves. s709 has a lower
+contrast curve than R709(800%), and preserves highlights.
+s709 has a softer low saturated image, and renders colors closer to those of film
+characters. It delivers soft and subtle skin tones with smooth gradation.
+The s709 cube is optimized for a Rec.709 monitor. If you use the look with a P3
+monitoring device (e.g. projector) at a post-production house, please use one of the
+following P3 cubes that is appropriate for the white point of your projector.
+These can be used for S-Log3 / S-Gamut3.Cine, and are available to download from
+LUT Downloads Page
+.
+File Name (.cube) Input Output
+s709.cube S-Log3-S-Gamut3.cine_To_s709.cube S-Log3 / S-Gamut3.Cine Gamma2.4 / Rec.709
+sP3Dxx.cube S-Log3-S-Gamut3.cine_To_sP3DCI.cube S-Log3 / S-Gamut3.Cine Gamma2.6 / P3DCI
+S-Log3-S-Gamut3.cine_To_sP3D65.cube S-Log3 / S-Gamut3.Cine Gamma2.6 / P3D65
+
+24
+s709 Workflow
+This diagram below shows the basic principles and capabilities behind creating
+production workflows using the camera’s integrated s709 functionality available from
+SDI output, and 3D LUTs like the s709.cube and sP3Dxx.cube files. Many different
+combinations of this basic example can be used for different shooting and production
+scenarios.
+
+25
+The diagram below shows an example of a workflow through the dailies/editorial
+phase and the grading phase of a typical production.
+It shows how s709 can be used for direct viewing on-set by using the direct output
+from VENICE, as described before.
+S-Log3 provides excellent dynamic range for post-production as is used as a standard
+within the post-production tools. S-Gamut3.Cine provides a wide color space post-
+production. Working with S-Gamut3.Cine/S-Log3 material offers huge creative
+possibilities in post-production.
+Dailies/Editorial can use s709 to create Rec.709 proxy clips for fast review and editing.
+Later in the production workflow, in grading, s709 can also be used to provide a view
+of the S-Gamut3.Cine/S-Log3 material on a standard Rec.709 monitor.
+
+26
+Selecting whether the s709.cube is used as an input LUT or output LUT will depend
+on the grading style. If the grade is in log space, then the s709.cube should be
+applied as an output LUT. If the grade is in Rec.709 space, then the s709.cube should
+be applied as an input LUT.
+If your grading target is P3, apply one of the .cube file for P3DCI or P3D65 depending
+on the target white, instead of the s709.cube.
+Viewing s709 on camera
+s709 output is available via SDI output on VENICE 2 / BURANO, which can be used
+as a standard on-set monitoring look for shooting.
+As an example on VENICE 2, look control on SDI 1/2, SDI 3/4, Monitor, HDMI
+outputs and Viewfinder is available by pressing ITEM key 5, in the HOME screen on
+Sub Display.
+
+27
+Using s709 on Sony RAW Viewer
+Sony RAW Viewer is a viewer application software for Windows / Mac OS platform,
+which can handle X-OCN, XAVC and other files recorded by VENICE 2 / BURANO.
+Open the footage and in the Parameter Setting window :
+• Select [S-Gamut3.Cine/S-Log3] in [Grading Color Space] setting
+• To apply s709 as input LUT, select [s709] in [Look Profile] setting
+• To apply s709 as output LUT, select [s709] in [Monitor LUT] setting
+
+28
+LUT Downloads Page
+Here 
+is the web page where you can download a wide variety of LUTs free of
+charge – suitable for Sony CineAlta cameras.
+VENICE 2 / BURANO can import 17-grid, 33-grid or 65-grid* 3D LUT files in CUBE
+format (.cube) by using an SD card – created using Sony RAW Viewer, Blackmagic
+Design DaVinci Resolve or other tools.
+LUT files with other lattice sizes can be used after conversion in Sony Catalyst
+Browse/Prepare application software.
+*Only VENICE 2 can import 65-grid User 3D LUT files, but when it’s loaded the SDI signal is output
+with 33-grid LUT data applied
+ART (Advanced Rendering Transform)
+They are pretty well understood by most people and are generally used by sharing
+the LUT amongst the DIT and other camera staff to load into the camera.
+However, 3D LUTs have some limitation in terms of accuracy depending on the
+number of grids. Even in a full post-production suite, they all work by using
+interpolation between the known points, so the results are imperfect, the more
+grids the more accurate.
+This requires vast hardware resources (think of the size of a modern GPU graphic
+card), so it is neither practical nor possible to process the larger patterns within a
+battery powered camera. As a result, banding and highlight sparkle might be seen
+on the camera output in some cases (see Picture 1).
+On set, many DIT’s and DP’s wonder why they can see some banding and highlight
+sparkle effects and are concerned that this may affect the recording as well. In
+practice the recording is perfect.
+In order to overcome these limitations, you can either increase the number of
+calculations of stored matrix points, with the associated massive increase in
+hardware requirements, or choose to use the data in another way by converting it
+to a format that allows us to use the information as part of the video processing.
+
+29
+ART (Advanced Rendering Transform) fully controls internal hardware modules
+at bit level precision and makes the most out of the hardware capabilities. The
+result of using the .ART file are shown below in Picture 2.
+You can easily notice a massive improvement in the image, remembering this is
+about as tricky a source that you can find.
+
+30
+ART file workflow :
+1. Prepare 3D .cube file with grading tools or RAW Viewer
+2. Import 3D .cube file into RAW Viewer, and export .art file
+3. Import .art file to VENICE 2 by using an SD card
+
+31
+Recording Format (X-OCN)
+In 2016, Sony has released new recording format X-OCN (eXtended tonal range
+Original Camera Negative) – that is Sony’s original compressed RAW format.
+This format further enhances the compression efficiency of Sony RAW, which
+delivers visually loss-less image quality.
+X-OCN offers uncompromising image capture performance with the power of 16
+bits, at low data rates. It processes camera original image data by utilizing a
+unique algorithm from Sony.
+By combining superlative 16-bit precision with surprisingly moderate bit rates, X-
+OCN opens up powerful new production possibilities. X-OCN produces file sizes much
+smaller than typical camera RAW, but unlike conventional codecs, X-OCN offers 16-
+bit scene linear encoding. So, you get the ultimate in tonal expression, longer
+recording times, faster file transfers and more economical post-production.
+VENICE 2 and BURANO build upon X-OCN’s proven success by offering internal 16-
+bit X-OCN recording without need for an external recorder, dramatically shrinking
+the form factor while still offering the full dynamic range and color reproduction of
+the sensor.
+Far exceeding 10 and 12-bit formats, 16-bit X-OCN records 65,536 tonal gradations
+per color component, or over 280 trillion individual shades of color. This is the
+ultimate in grayscale expression, creating an enormous palette for extreme subtleties
+in grading and far greater flexibility for colorists and editors alike.
+
+32
+In most cases such as Feature Film, TV Drama or Commercial, Sony would
+recommend X-OCN ST which provides best balance between picture quality and file
+transfer time / storage size.
+For special cases such as visual effects work or contents creation for giant screen,
+X-OCN XT is ideal as it captures the highest quality imagery.
+For Mid-Low budget cinema (including TV Drama), Documentary or productions
+requiring long recording time, X-OCN LT is a good option as it provides even smaller
+file size than X-OCN ST – while preserving the benefit of 16-bit scene linear.
+Mode Major Applications* Description
+X-OCN XT
+(Extreme)
+• Giant Screen
+• Visual Effects
+• Feature Film
+• Even higher picture quality than X-OCN
+ST, exceeding Sony RAW quality
+X-OCN ST
+(Standard)
+• Feature Film
+• Episodic Television
+• Commercials
+• Documentary
+• Best balance between picture quality
+and file transfer time / storage size,
+providing best efficiency in post-
+production
+• Equivalent quality to Sony RAW, even
+with 30% smaller file size
+X-OCN LT
+(Light)
+• Indy Feature
+• Episodic Television
+• Commercials
+• Documentary
+• Live Events
+• Even smaller file size than X-OCN ST
+(with 60% smaller than Sony RAW),
+while preserving processing flexibility
+provided by 16-bit scene linear
+*Actual examples, not meaning each mode is appropriate only for these applications
+
+33
+The following bar charts show how the bitrate of X-OCN (Sony’s original
+compressed RAW) is compared to other formats at 4K/24p and 8K/24p.
+When it comes to 4K X-OCN LT (389Mbps), it can offer stunning RAW quality with
+16-bit scene linear at almost equivalent bitrate to 4K XAVC Class480 (384Mbps)
+and even at lower bitrate than 4K ProRes 422 (503Mbps).
+Bitrate Comparison at 4096 x 2160 / 24p
+Bitrate Comparison at 8192 x 4320 / 24p
+X-OCN (Sony’s original compressed RAW format) gives you all the benefits of a RAW
+workflow but without huge file sizes normally associated with uncompressed RAW.
+It takes everything that the sensor captures and uses a clever encoding process to
+store that information in a user friendly, compact, 16-bit MXF file.
+
+34
+Recording Media (AXS / CFexpress Memory Card)
+AXS Memory Card (for VENICE 2)
+In 2014, Sony has released AXS Memory Card (A Series) which is ideal for X-OCN
+recording with CineAlta cameras. Perfectly suited to the highest quality
+cinematography, AXS Memory has a unique combination of capacity, sustained data
+throughput, security and portability. It opens up completely new ways for end-users
+to work.
+Together with the launch of VENICE 2, the new AXS-1TS66 memory card was
+added to the line-up – which has a capacity of 1 TB and guaranteed write speed of
+6.6 Gbps. It can record up to 8.6K using 16-bit X-OCN format, as well as supporting
+a range of frame rates at lower resolutions. It can also handle 4K ProRes and High
+Frame Rate (HFR) 4K recording up to 120fps*.
+*HFR up to 120fps in 4K resolution is only supported by VENICE 2 with 6K sensor
+AXS Memory Card – A Series have 3 types. The maximum of shooting frame rate on
+VENICE 2 varies depending on the speed performance of AXS Memory Card.
+
+35
+Note
+Please keep the memory card in the supplied card case when storing or carrying it,
+and make sure that the case is locked securely – in order to prevent any damage
+which may result in the loss of recorded data.
+The AXS-AR3 card reader offers an incredible maximum data read speed of up to
+9.6 Gbps (1200 MB/s) from AXS Memory Card via Thunderbolt 3 interface.
+This makes it easier than ever to import 8K/6K X-OCN files recorded onto AXS
+Memory Cards by VENICE 2.
+
+36
+CFexpress Type B Memory Card (for BURANO)
+BURANO is equipped with two CFexpress Type B memory card slots supporting
+VPG400* which can sustain high bitrate writing of video data, including X-OCN LT
+8K. The dual media slots allow relay and simultaneous recording**, while versatile
+CFexpress Type B media are convenient for backing up and transferring data in the
+field.
+*Non-VPG CFexpress Type B memory cards are not guaranteed for normal operation
+**XAVC only
+In 2024, Sony has released new compatible high-capacity models with VPG400,
+CEB-G1920T and CEB-G960T. These memory cards have the capacity to reliably
+record vast amounts of data such as X-OCN LT 8K, and are also equipped with a high
+level of durability that allows them to be used in harsh environment.
+Optimized for Sony CFexpress Type B memory cards, the optional card reader
+MRW-G1 allows you to transfer data via a USB SuperSpeed 10 Gbps (USB 3.1 Gen
+2) interface and take full advantage of high speed backups and more efficient
+workflows.
+It’s compact, easy to carry and works with both Sony CFexpress Type B and XQD G
+series memory cards.
+
+37
+Flexible Lens Mount (PL / E)
+PL Lens Mount
+VENICE 2 and BURANO come with the industry-standard PL lens mount and are
+compatible with Super 35mm and Full-Frame PL lenses (spherical and anamorphic).
+The lens mount includes contacts that support Cooke /i Technology (including new
+generation Cooke /i3*), and lens information is recorded as metadata, frame by
+frame. We have also added support for ZEISS eXtended Data*.
+*Supported by VENICE 2 only (not by BURANO)
+There are two connectors on the side of the lens adaptor. You can use either
+connector depending on the shooting configuration – so that the scale of the lens
+can be visible by an assistant camera when the camera is installed in a rotated
+position of 90 degrees, for example.
+Before attaching a lens, set the interface position of the PL Mount lens in the menu
+[PL-Mt Interface Position] – [Top], [Side] or [Off]*.
+*Select [Off] when using a lens which does not have a Cooke type connector
+
+38
+VENICE 2 has a safety mechanism in order to minimize the risk of any troubles
+caused by electric short – when attaching a PL Mount lens to the camera.
+When no lens is attached, the camera supplies 8V power via the connector. When a
+PL Mount lens is attached, the 8V power keeps being supplied during initial
+communication between the camera and the lens. Once it’s completed, the supplied
+power goes up to 24V to start normal communication. This is the behavior when the
+menu [PL-Mt Voltage] is set to [8V->24V] (default value).
+However, there may be some cases where the initial communication is not
+established correctly due to undervoltage – resulting in no value on the focal length
+of the lens displayed on the viewfinder / monitor screen.
+In this case, please change the menu setting of [PL-Mt Voltage] to [24V].
+
+39
+Lever Lock Type E-mount
+E-mount lenses can be fitted when the PL mount adapter is removed – simply by
+loosening six hex screws.
+The lever lock type E-mount gives users the ability to change lenses by rotating the
+locking collar rather than the lens itself, which means that in most cases lens support
+rigs don’t need to be removed, saving time during a production.
+
+40
+Sony’s ever-increasing range of E-mount lenses, from ultra-wide to ultra-telephoto,
+are supported by the BURANO’s advanced image stabilization and AF capabilities –
+ideal for mobile and single-operator projects.
+Functional compatibility with E-mount lenses :
+Function VENICE 2 BURANO
+Manual Focus RCP control
+Wired LAN / Wi-Fi control
+RM-30BP
+Monitor & Control app
+Zoom
+(for servo
+zoom lens
+only)
+RCP control
+Wired LAN / Wi-Fi control
+RM-30BP / GP-VR100
+Monitor & Control app
+Iris Assignable button
+(Open/Close)
+RCP control
+Wired LAN / Wi-Fi control
+Assignable dial
+RM-30BP / GP-VR100
+Monitor & Control app
+Auto Focus - MF/AF switch
+RM-30BP
+Monitor & Control app
+Iris - Menu / Assignable button
+(On/Off)
+RM-30BP
+Image Stabilization - Menu
+(Active/Standard/Off)
+Shading
+Compensation
+Menu (Auto/Off) Menu (Auto/Off)
+Chroma Aberration
+Compensation
+Menu (Auto/Off) Menu (Auto/Off)
+Distortion
+Compensation
+- Menu (Auto/Off)
+Breathing
+Compensation
+- Menu (Auto/Off)
+
+41
+Built-in ND Filter
+8-step Mechanical ND Filters (for VENICE 2)
+VENICE 2 follows the world’s first of VENICE, with a servo-controlled 8-step
+Mechanical ND filter mechanism built into the camera chassis.
+It consists of two turrets with three glass filters each – that offers a massive ND of
+0.3 (1/2 = 1 stop) to 2.4 (1/256 = 8 stops) range that reduces time lost on set
+changing external filters.
+The ND filters also greatly increase VENICE’s flexibility, such as :
+• Ability to be controlled remotely on drones, cranes, or in an underwater housing
+• Dust proof by a sealed structure together with grease-less gear mechanism
+• Minimized color shifting through individual adjustments made in the factory
+
+42
+Electronic Variable ND Filter (for BURANO)
+Sony’s unique electronic Variable ND Filter has been redesigned to be both smaller
+and compatible with the built-in image stabilization mechanism.
+It can smoothly and continuously change its density from 0.6 (1/4) to 2.1 (1/128).
+The seamless ND adjustment is available when a PL Mount lens is attached, as well
+as an E-mount lens.
+With physical ND filters no longer needed, operators can adjust the electronic filter
+density by simply rotating the ND dial. Operators can maintain a constant depth of
+field by adjusting the electronic ND filter and the iris control together.
+Continuous or stepped changes can be selected with the ND STEP/VARIABLE switch,
+depending on the application. The [Auto ND] function automatically adjusts the filter
+density to give a correct exposure, effectively allowing the use of the ND filter as an
+alternative Auto IRIS.
+
+43
+Image Stabilization
+In-Body Stabilization with PL mount / E-mount lenses (for BURANO)
+BURANO is the world’s first cinema camera that supports in-body optical image
+stabilization (IBIS) for almost any attached lenses, including for the first time PL. The
+new, compact image stabilization system was originally developed for the Alpha
+series of mirrorless cameras.
+Featuring a gyroscopic sensor and control algorithm, it compensates for camera
+shake even for hand-held shooting while walking. The stabilization is so effective that
+it removes the need for any extra equipment for many applications.
+Stabilization is even greater with E-mount lenses, allowing more difficult shots to be
+captured without blurring. Camera shake data can be passed to post-production for
+precise alignment with CGI and in volume stages.
+Function Performs a more
+enhanced Image
+Stabilization
+Performs Image
+Stabilization when
+shooting under relatively
+stable conditions
+Disable Image
+Stabilization
+PL Stabilization
+(PL mount lens)
+[High]* [Low] [Off]
+SteadyShot
+(E-mount lens)
+[Active]* [Standard] [Off]
+*[High] and [Active] can be set only in FFc 6K (17:9/16:9)**, S35 5.8K (17:9/16:9) and S35 1.9K
+(16:9)** modes. [High] and [Active] cannot be set in X-OCN recording / S&Q shooting mode.
+**Planned to support on BURANO v2.0 (March 2025 or later)
+
+44
+Basically, we would recommend that the menu [Stabilization Adjustment] is set
+to [Auto] (default value), so that the image stabilization is performed automatically
+based on information obtained from the lens. In the top left of the LCD monitor, the
+focal length of the lens is displayed when a lens supporting this information is
+attached.
+When a lens not supporting this information is attached, no value of the focal length
+is displayed. In this case, please select [Manual] in the [Stabilization Adjustment]
+menu setting and set the focal length of the lens (8mm to 1000mm) in the [Focal
+Length] menu manually to get the optimum level of stabilization.
+
+45
+Note
+In case of using a Sony E-mount lens equipped with OSS (Optical Steady Shot)
+feature, set the slide switch on the lens to [ON] when using Image Stabilization on
+the camera. When the switch is set to [OFF], the lens takes priority and the camera
+cannot switch the setting.
+Image Stabilization feature is designed for hand-held shooting, being optimized for
+correction parameters such as the target frequency.
+• It is strongly recommended to turn off Image Stabilization when the camera is
+used except for hand-held usage – such as drone, in-vehicle, on a tripod and so
+on
+• Also recommended to turn off Image Stabilization when the footage is used for
+VFX, as there may be cases where motion tracking cannot be done accurately
+referencing camera metadata
+(Also ensure that OSS switch on the lens is set to [OFF] in above cases when an E-
+mount lens is used)
+For using with a drone system, please ensure precise adjustments suitable for the
+weight of camera – on drone, gimbal and damper. Because camera shake tend to
+make much bigger impact on drone footage than being equipped with Image
+Stabilization mechanism inside the camera.
+(These are images on VENICE 2)
+
+46
+Auto Focus
+Fast Hybrid AF (for BURANO)
+Effortlessly track fast moving subjects with pin-sharp focus, even when using wide
+lens aperture settings to maintain a shallow depth of field with BURANO’s Full-Frame
+sensor.
+Originally developed by Sony’s Alpha camera engineers, enhanced Fast Hybrid AF
+combines phase detection AF for fast, accurate subject tracking with contrast AF for
+exceptional focus accuracy.
+The dedicated 627-points phase detection AF sensor covers approximately 88.7% of
+the whole image area, allowing consistently accurate, responsive AF tracking, even
+with shallow depth of field.
+
+47
+AI Subject Recognition AF with touch* (for BURANO)
+Our onboard AI processing unit recognizes not only eye position but also accurately
+senses human torso and head positions.
+Subject Recognition AF automatically draws a frame around people’s faces when they
+are detected. Human pose estimation technology recognizes body and head position,
+so you can even track a subject facing away from the camera or wearing a mask.
+Touch a person to focus on, and the camera will track and that person precisely.
+Even in challenging situations like a bowed head or when hair covering a face, the
+camera accurately captures the eyes so that operators can focus accurately even in
+the most difficult circumstances.
+*Over 70 E-mount lenses can use BURANO’s Hybrid AF and AI Subject Recognition AF features
+
+48
+VENICE Extension System 2
+The VENICE Extension System 2 (CBK-3620XS) allows for new levels of shooting
+flexibility with no compromise to image quality.
+Incorporating customer feedback and developed alongside VENICE 2, it offers wider
+bandwidth to support VENICE 2’s 8K sensor – over twice as much cable distance (up
+to 12m) without a repeater box, additional control buttons and a built-in gyro sensor.
+The Extension System consists of a front panel cover, image sensor block case with
+a choice of 3m and 12m extension cables. The new Extension System is fully
+compatible with VENICE 2 using the 8K or 6K sensors – as well as the original VENICE
+using latest firmware.
+
+49
+The imager block also comes with Monitor output and 24V output for powering
+accessories such as lens servo motors and monitoring. The relayed monitor signal
+and supplied 24V power need to be input to the camera body respectively.
+Multiple screw holes on all surfaces make it easy to accessorize and fit on to a wide
+variety of rigs, while the main weight of the camera can be supported elsewhere.
+Ideal for shooting in tight spaces and with gimbals
+The Extension System camera head measures 158 x 147 x 126 mm (H x W x D)*,
+weighing around 2.2 kg* with a PL mount adaptor and 1.7kg* with E-mount when
+used with the VENICE 2 8K sensor block.
+The separated sensor block with lens is so small and light it allows for an easy hand-
+held mode, enabling you to locate it in tiny spaces, keeps stabilization systems
+lightweight, allows use of larger lenses while maintaining a smaller profile, facilitates
+faster operation for motion-control rigs, use of body mounts, and other situations
+that you wouldn’t expect possible for a Full-Frame cinema camera.
+*Excluding cable section
+Weight* VENICE 2 (8K) VENICE 2 (6K)
+PL mount 2.1 kg 2.1 kg
+E-mount 1.7 kg 1.6 kg
+
+50
+Gyroscopic support with recording to metadata
+While shooting with the original Extension System (CBK-3610XS) did not
+accommodate use of a spirit level indicator (gyroscope sensor), the CBK-3620XS is
+equipped with a sensor on the camera head side that detects horizontal and vertical
+tilt.
+Camera head tilt information can be checked when shooting at different head and
+tilt angles – ideal for VFX applications. Naturally, the horizontal and vertical tilt are
+also recorded in the metadata and output through the camera’s SDI.
+4 assignable buttons on camera head for easy operation
+The camera head has four ASSIGN buttons that can be set to functions such as
+change ND filter settings, REC Start/Stop and more for easier operation with VENICE
+2. Choose a custom set-up that suits your preference for any scene.
+
+51
+High-speed interface, SLVS-EC (Scalable Low-Voltage Signaling with
+Embedded Clock) was developed by Sony Semiconductor Solutions Corporation
+(SSS) for fast, high-resolution image sensors.
+The interface’s simple protocol makes it easy to build camera systems. Featuring an
+embedded clock signal, it is ideal for applications that require high speed, fewer lanes,
+or transmission over longer distances.
+
+52
+Remote Control
+Both VENICE 2 and BURANO are capable of remote control, but the available
+methods of control vary depending on the model as follows.
+Control method VENICE 2 BURANO
+RCP/RM panel 8-pin cable ✓ -
+RCP panel Wired LAN - ✓
+GP-VR100 Grip Remote Control
+cable
+- ✓
+RM-30BP LANC cable - ✓
+Web browser Wired/Wireless LAN ✓ -
+Monitor & Control app Wired/Wireless LAN - ✓
+Camera Remote SDK Wired LAN - ✓
+Paint Control from RCP/RM* panel
+VENICE 2 and BURANO support control from an RCP / RM* panel that can be used
+with broadcast camcorders and system cameras. When connected, ITU-R Rec.2020
+color space and HLG are selectable and adjustment of various paint parameters is
+supported.
+*Supported by VENICE 2 only (not by BURANO)
+Compatible RCP/RM models VENICE 2 BURANO
+RCP-1500/1501/1530/3100/3500/3501 
+✓ ✓
+RM-B750/B170 
+✓ -
+
+53
+Compatible RCP functions :
+Item Sub-item VENICE 2 BURANO
+Shooting FPS Fixed/Variable Select 
+✓
+FPS Select 
+✓
+Shutter Select Shutter ON/OFF 
+✓
+ECS ON/OFF 
+✓
+Shutter Speed 
+✓
+ECS Frequency 
+✓
+ND ND Position 
+✓ ✓
+Gain Gain (Step) 
+✓ ✓
+White Balance Color Temp 
+✓ ✓
+Color Temp Balance 
+✓ ✓
+R Gain 
+✓ ✓
+B Gain 
+✓ ✓
+Auto White Balance 
+✓ ✓
+Auto Tracing White 
+✓
+Project Screen File 
+✓
+Standard File 
+✓
+Paint Switch Status Gamma 
+✓
+Black Gamma 
+✓
+Matrix 
+✓
+Knee 
+✓
+White Clip 
+✓
+Detail 
+✓
+Flare 
+✓
+Test Saw 
+✓
+Black Master Black 
+✓ ✓
+R Black 
+✓ ✓
+B Black 
+✓ ✓
+Flare Setting 
+✓
+Master Flare 
+✓
+R Flare 
+✓
+G Flare 
+✓
+B Flare 
+✓
+Gamma Setting 
+✓
+Gamma Category 
+✓
+Gamma Select 
+✓
+Black Gamma Setting 
+✓
+Range 
+✓
+Master Black Gamma 
+✓
+Saturation Setting 
+✓
+Level 
+✓
+Knee Setting 
+✓
+Point 
+✓
+Slope 
+✓
+White Clip Setting 
+✓
+Level 
+✓
+
+54
+Item Sub-item VENICE 2 BURANO
+Paint Detail Setting 
+✓ ✓
+Level 
+✓ ✓
+H/V Ratio 
+✓ ✓
+Crispening 
+✓ ✓
+Level Depend 
+✓
+Level Depend Level 
+✓
+Frequency 
+✓
+Knee Aperture 
+✓
+Knee Aperture level 
+✓
+Limit 
+✓ 
+✓
+White Limit 
+✓
+Black Limit 
+✓
+Skin Detail Setting 
+✓
+Skin Gate 
+✓
+Natural Skin Detail 
+✓
+Zoom Link 
+✓
+Channel Switch 
+✓
+CH1 Detail Setting 
+✓
+CH2 Detail Setting 
+✓
+CH3 Detail Setting 
+✓
+Matrix Setting 
+✓
+User Matrix 
+✓
+User Matrix R-G 
+✓
+User Matrix R-B 
+✓
+User Matrix G-R 
+✓
+User Matrix G-B 
+✓
+User Matrix B-R 
+✓
+User Matrix B-G 
+✓
+Multi Matrix Setting 
+✓ ✓
+Area Indication 
+✓ ✓
+Reset 
+✓ 
+✓
+Axis 
+✓ 
+✓
+Hue 
+✓ ✓
+Saturation 
+✓ ✓
+Technical Test Signals Color Bars ON/OFF 
+✓
+Test Saw 
+✓
+Rec 
+✓
+Play 
+✓
+Stop 
+✓
+F.Rev 
+✓
+F.Fwd 
+✓
+Rec Review 
+✓
+Next 
+✓
+Prev. 
+✓
+White Mode Preset On/Off 
+✓
+Iris Iris Level 
+✓ 
+✓
+Close 
+✓
+Auto Iris On/Off 
+✓
+
+55
+Item Sub-item VENICE 2 BURANO
+Zoom Remote 
+✓
+Speed 
+✓
+Tele-Wide 
+✓
+Zoom Value [%] 
+✓
+Focal Length [mm] 
+✓
+Focus Remote 
+✓
+Focus Position 
+✓
+Focus Value [%] 
+✓
+Focus Length [m] 
+✓
+Call 
+✓ ✓
+Tally R-Tally 
+✓
+G-Tally 
+✓
+The above chart shows when RCP-1500/1501/3500/3501 is connected. The
+available functions and limitations vary depending on the model of RCP/RM panel.
+For more details, please refer to the following documents downloadable from Sony
+official website :
+• VENICE 2 Operating Instructions (v3.0)
+• BURANO Remote Control Guide
+
+56
+Remote Camera Control over Ethernet / Wi-Fi (for VENICE 2)
+You can fully control a VENICE 2 camera over Ethernet or Wi-Fi* from a tablet or
+laptop using a web browser. This allows the first AC or DIT to check and control
+every aspect of the camera’s recording and other functions from a safe distance
+including changing ISO, frame rates, 8-step ND Filters.
+*Requires Wireless LAN adaptor (CBK-WA02) inserted into the camera via USB
+
+57
+Using Ethernet or Wi-Fi connection, 3D LUT files, ART files and ASC CDL files can all
+be imported directly onto cameras, so there’s no need to physically load them using
+SD cards.
+ASC CDLs can then be controlled and adjusted* via a web interface and embedded
+in clip metadata. This eliminates the need for a DIT to manage ASC CDL files
+separately to be associated to the clips in post-production.
+*Color wheel control is not supported0
+
+58
+In-Camera VFX
+Virtual Production makes it possible to replace traditional greenscreen and
+bluescreen composing and physical sets by using seamless LED walls as a backdrop,
+with the added benefit of capturing final pixel in camera.
+Color fidelity of In-Camera VFX
+In Virtual Production stage, we can face a potential challenge on color discrepancies
+between physical lights and spectrum of LED wall. In order to compensate color
+fidelity especially skin tone, VENICE 2 Version 3.0 update introduces the “In-Camera
+VFX (ICVFX) Mode”.
+
+59
+This setting includes parameters such as “LED Wall Color Temperature” and “Light
+Blending” ratio to enhance color fidelity when mixing practical lighting and LED
+volumes as lighting in In-Camera VFX. These setting parameters are recorded as
+metadata on X-OCN and baked into ProRes.
+
+60
+Sony’s Virtual Production Tool Set integrates Crystal LED walls with cinema
+cameras for an end-to-end solution. Cinematographers and directors can blend real
+sets and props with virtual backdrops to create new worlds and explore their vision.
+Camera and Display Plugin
+Visualizing the on-set image in advance is
+hard and expensive. Reproducing that
+image during the shoot is even harder.
+Our plugin lets you design the picture you
+need for your VENICE-powered virtual
+production, then save these settings in our
+Virtual VENICE for Unreal Engine.
+Let your Virtual Art Department create
+pre-visualizations that reflect the reality of
+your upcoming shooting with VENICE and LED volume. Share them with your on-set
+team for a smoother shoot and less issues while being in the on-set stage.
+Transfer the defined parameters to your physical VENICE camera, preserving your
+creative vision. Monitor and control your VENICE settings via a simple GUI on Unreal
+Engine. Benefit from rea-time moiré alerts for the shoot.
+Color Calibrator
+Calibrate the colors for your virtual
+production before you start to shoot, for
+more efficient shooting and less work in
+post-production. Solve LED color shifts in
+advance so you don’t need to deal with it
+on shoot days.
+Precise color reproduction can be
+challenging for virtual productions,
+creating unnecessary adjustments on-set
+and corrections at post-production. Color Calibrator is a Windows 10 application
+which is specially tuned to our VENICE cinema camera, so you can ensure that the
+colors you visualize before the shoot day match the colors that will appear in your
+dailies.
+
+61
+Display the color calibration chart on your LED volume, using the Sony Onset Camera
+Component (found in our Camera and Display Plugin for Unreal Engine).
+Color Calibrator analyses and compares the calibration charts from within Unreal
+Engine and the image that the VENICE camera captures from the panels. It then
+automatically shows the difference with a graph and vector scope.
+Easily Create and output a LUT correction, which is applied to Unreal Engine to adjust
+colors.
+
+62
+DAILIES
+• 4K HDR On-set Monitoring
+• Offload & Backup
+• Safe Memory Card Eraser
+• Data Recovery
+
+63
+4K HDR On-set Monitoring
+With directors, first ACs, cinematographers and DITs needing to work remotely from
+the camera and each other, best-in-class, virtually precise and consistent monitoring
+is all the more important to identify hot spots or how much detail is being recorded
+in the shadows, as well as extraneous items in shot.
+Launched in 2020, the affordable PVM-X2400 (24”) and PVM-X1800 (18.4”)
+TRIMASTER 4K HDR monitors are designed for on-set use. The PVM-X range
+perfectly matches the wide color gamut of the Sony BVM-HX3110, BVM-HX310 and
+BVM-X300 monitors – as widely used throughout high-end post – and shares the
+same, familiar menus and functions. These monitors also bring all-white luminance
+of 1000 cd/㎡* to production monitoring across a wide range of applications.
+*Panel specification. This is a typical luminance value at D65 but not guaranteed.
+The PVM-X range monitors are compact, light, extremely portable and can run off
+batteries making them easier to deploy within stand-alone workstations. They can
+also be used for super-accurate on-set dailies and by WIP editorial wanting an
+affordable but highly accurate 4K HDR image to work from.
+
+64
+Offload & Backup
+Once a shooting is finished, the camera data need to be transferred from memory
+cards to a storage (e.g. HDD). Rather than using simple file copy methods (e.g.
+macOS Finder or Windows Explorer), a data management tool is used in order to
+ensure the secure transfer.
+Sony X-OCN files are supported by leading data management tools for secure
+handling and verification of original camera data – such as Pomfort Silverstack,
+Yoyotta, Hedge OffShoot, and ShotPut Pro from Imagine Products.
+For reference, the following example shows a typical folder structure of original
+camera data in X-OCN / XAVC* format, recorded on a memory card by VENICE 2 or
+BURANO. There are slight differences between the two models.
+*Supported by BURANO only (not by VENICE 2)
+X-OCN Folder Structure (VENICE 2)
+• The root folder is called “CINEROOT”, but once the first recording is made the
+folder is renamed as a unique name (e.g. “A001CRWE” in below chart)
+• An X-OCN file (.mxf) is recorded under “Clip” folder, in an individual folder for
+each clip
+• A Non Real-Time Metadata file (.xml) is recorded in the individual folder for
+each clip as a side-car file of the X-OCN file
+ “M01” is added at the end of clip name
+• A 3D LUT file (.cube) is recorded in the individual folder for each clip as a side-
+car file of the X-OCN file, if 3D LUT is applied to the monitoring image
+ Look->CDL* : “L01” is added at the end of clip name
+ CDL->Look* : “L02” is added at the end of clip name
+*depends on [ASC CDL Process] menu setting
+• An ASC CDL file (.cdl) is recorded in the individual folder for each clip as a side-
+car file of the X-OCN file, if ASC CDL is applied to the monitoring image
+ “D01” is added at the end of clip name
+
+65
+X-OCN Folder Structure (BURANO)
+• The root folder is called “CINEROOT”, but once the first recording is made the
+folder is renamed as a unique name
+• An X-OCN file (.mxf) is recorded under “Clip” folder, in an individual folder for
+each clip
+• A Non Real-Time Metadata file (.xml) is recorded in the individual folder for
+each clip as a side-car file of the X-OCN file
+ “M01” is added at the end of clip name
+• 3D LUT files (.cube) are not recorded in X-OCN recording*
+• ASC CDL is not supported on BURANO
+
+66
+XAVC Folder Structure (BURANO)
+• The root folder name and the volume label name of the recording media can be
+selected on the [XAVC Root Folder Name] menu setting :
+ [XDROOT] (default name)
+ [Cam ID + Reel#] : Camera ID (1-digit) + Reel No. (3-digit)
+• An XAVC file (.mxf) is recorded under “Clip” folder, in an individual folder for
+each clip
+• A Non Real-Time Metadata file (.xml) is recorded in the individual folder for
+each clip as a side-car file of the X-OCN file
+ “M01” is added at the end of clip name
+• 3D LUT files (.cube) are recorded under “General/LUT” folder if 3D LUT is
+applied to the monitoring image*
+• ASC CDL is not supported on BURANO
+*The 3D LUT information can also be recorded as metadata in the XAVC clip, when the [Embed LUT
+File] menu is set to [ON]
+
+67
+Safe Memory Card Eraser
+o/PARASHOOT is a safe card eraser application* with backup verification and file
+restore, offered by OTTOMATIC. The version 2 officially supports Sony AXS Memory
+Card – which means it works perfectly in VENICE workflow.
+*for macOS platform only
+This background application watches over your selected backup destination folder.
+When you format a memory card after a backup, o/PARASHOOT verifies file names
+and file sizes to be identical to the backup destination. If files in the backup
+destination folder are missing, o/PARASHOOT won’t allow you to format the card and
+you will be prompted to manually re-check the backup or to back up missing files.
+If the backup is identical, o/PARASHOOT fake formats the card to make it unreadable
+by any camera or file system. This allows the camera assistant to format the card on
+insertion into the camera without going through the menu, as most cameras prompt
+you to reformat a mal-formed card. Up until then, the fake-formatting allows to
+restore the card completely without loss of information.
+This workflow makes sure a camera assistant knows that the card was backed up by
+a DIT and verified by o/PARASHOOT.
+
+68
+The following tools are required to be used together in this workflow :
+• o/PARASHOOT v2 or later (application software)
+• Sony AXSM Drive Utility v3.3.0 or later (application software)
+• Sony AXS-AR3 or AXS-AR1 v1.20 or later (AXS Memory card reader)
+
+69
+Data Recovery
+AXS Memory Card (for VENICE 2) :
+VENICE 2 recording system adopts AXS Memory Card (A Series) that is an ultra-high
+speed, high capacity and high reliability flash memory card – perfectly suited to the
+highest quality cinematography.
+In order to avoid any troubles that require some data recovery recorded on AXS
+Memory Card, we would strongly recommend the followings :
+1. When storing or carrying AXS Memory Cards, please ensure keeping the
+card in the supplied case and make sure the case is locked securely
+If AXS Memory Card is subjected to a large external shock such as being
+dropped from a high place, the internal circuit board may be damaged and
+recorded data may be affected in the worst-case scenario.
+If an AXS Memory Card cannot be mounted on Mac (via AXS Memory Card
+Reader) due to physical damage or some other reason, please try Windows
+PC instead in order to offload the clips.
+(Because it tends to be more successful for AXS Memory Cards to be mounted
+on Windows PC compared to Mac in such cases)
+
+70
+2. Please keep firmware & software up-to-date on all the working machines
+& apps
+The latest versions include some improvements in terms of stability.
+Latest Version (as of November 2024)
+Category Product Latest Version
+Camera VENICE (MPC-3610) v6.30
+VENICE 2 (MPC-3626/3628) v3.00
+App Software AXSM Drive Utility v3.3.0
+AXS Memory Card
+Reader
+AXS-AR1/AR3 v1.20
+AXS-CR1 
+(one version only)
+AXS Memory Card AXS-A256S24 / A512S24 / A1TS24 v1.00* / v2.01*
+AXS-A512S48 v2.02* / v3.02*
+AXS-A1TS48 v2.02* / v4.02*
+AXS-A1TS66 v5.01
+*depends on Serial No.
+3. Please do NOT remove the memory card from the camera / the memory
+card reader while being accessed
+Camera (VENICE 2 / VENICE + AXS-R7)
+When turning off the power or removing the card, please ensure that the
+ACCESS lamp of the card slot in use is lit in green (or unlit) before proceeding.
+Note
+• If the power of this device is turned off or the memory card is removed while
+accessing the memory card, data cannot be guaranteed
+• There is a possibility that all data recorded on the card may become corrupted
+
+71
+Memory Card Reader (AXS-AR3 / AR1)
+After inserting the card, it will be lit in blue until it is recognized (Please do not
+remove the memory card during this time).
+Once it is recognized properly, the access lamp will light up green for standby
+(Please do not remove the memory card during this time).
+Before removing the card, please perform the safe removal operation for the
+memory card reader on macOS or Windows. Once the removal operation is
+complete, the access lamp will turn off indicating that it is safe to remove the
+memory card.
+Note (for AXS-AR3 / AR1 / CR1)
+• For instance, in the event that the power is lost during recording, internal
+processing is occasionally performed automatically after inserting the card into a
+card reader – which may result in a delay before the Mac/PC recognizes the card.
+Please wait for a moment without removing the card.
+• If the card is not recognized even after the following time has elapsed, please
+remove the card and insert again.
+ AXS-A1TS48 / AXS-A512S48 : approx. 7 seconds
+ AXS-A1TS66 : approx. 15 seconds
+• If the power of this device is turned off or the memory card is removed while
+accessing the memory card, data cannot be guaranteed
+• There is a possibility that all data recorded on the card may become corrupted
+
+72
+However if for any reason an error should occur in an AXS Memory Card, the card
+must be restored* before use. When some troubles happen during recording (e.g.
+camera powered down), we would suggest the following procedure to try the
+recovery.
+*Not guaranteed that all clips / cards are restored or recovered
+#1 “Restore” function on the camera
+1) When the power is turned on again, the following message is displayed on the
+sub display.
+(The same message may be displayed when the card is re-inserted, after the
+card is removed and the camera is turned on again)
+2) Select “Run” to execute the restore.
+Note
+• Be sure to try the Restore function on the camera that was used for recording.
+• The card that was recorded with a camera other than the one that was used for
+recording or with another unit of different version (even if the same model) may not
+be restored properly.
+
+73
+#2 “Clip Recovery” function on AXSM Drive Utility
+If the recovery 1) is not successful, try this function on the application software.
+A) Recovering clip files stored on an AXS Memory Card
+If a clip file that requires recovery exists on the card selected in the tree display,
+you can recover that file and save it on a computer.
+Note
+• This function does not perform recovery of an AXS Memory Card itself.
+• This operation will not delete the original files from before the recovery was performed.
+Recovery clip files will be saved to a folder that you specify on the computer.
+Be sure to verify whether there is sufficient space on the storage (e.g. HDD) to which
+the clip files will be saved beforehand.
+B) Recovering clip files stored on a computer
+If clip files transferred from an AXS Memory Card to a computer require recovery,
+you can perform recovery based on the transferred files.
+Note
+• This operation will not delete the original files from before the recovery was
+performed. The recovered clip files will be saved to the same folder as the clip files
+that required recovery.
+Be sure to verify whether there is sufficient space on the storage (e.g. HDD)
+containing the clip files beforehand.
+
+74
+CFexpress Card Type B (for BURANO) :
+BURANO recording system adopts CFexpress Card (Type B) VPG400 that allows for
+reliable capture at exceptional high data rates, including X-OCN LT recording in full
+8K. The versatile media are convenient for backing up and transferring data in the
+field.
+Just like VENICE 2, the Restore function on the camera is also available for BURANO.
+“Restore” function on the camera
+1) When you load a CFexpress Card that needs to be restored, the following
+message appears on the LCD monitor to ask whether you want to restore it.
+“Media Error – Media (A) Needs to be Restored …”
+2) Select “Execute” to execute the restore.
+Note
+• For restoration of media recorded with this unit, be sure to use this unit.
+• Media recorded with a device other than this unit or with another unit of different
+version (even of the same model) may not be restored using this unit.
+• Clips shorter than 2 seconds cannot be restored.
+• Restored media may not operate at its original performance. Make a backup of all
+required clips and then execute a full format before use.
+
+75
+EDITORIAL & CONFORM
+• Viewing & Transcoding
+• Offline Editing & Re-Link
+• Delivery Format (Frame Line)
+
+76
+Viewing & Transcoding
+RAW Viewer
+RAW Viewer is free application software that allows you to view RAW, X-OCN and
+XAVC files recorded with Sony VENICE 2, VENICE, BURANO and other cameras as
+well as AXS-R7 recorder.
+With its intuitive user interface, you can view and perform basic color grading on files
+transferred to your computer, or files stored on a memory card inserted to AXS-AR3
+or other card reader.
+In addition, you can also export RAW, X-OCN, XAVC and ProRes files to DPX,
+OpenEXR, XAVC or ProRes (for macOS only) format to facilitate file based post-
+production workflow.
+The camera metadata is preserved during file conversion to OpenEXR, which can
+help post-production operators especially in VFX workflow.
+
+77
+Offline Editing & Re-link
+X-OCN Workflow Overview
+For offline editing workflow, all X-OCN files are usually transcoded to lower resolution
+proxy files such as ProRes and DNxHD.
+Sony RAW Viewer supports this transcoding to ProRes files (for macOS only). If
+necessary, you can also use another application software called Sony Catalyst
+Prepare which supports transcoding to DNxHD as well.
+These tools can be useful in environments where other transcoding software is not
+available.
+
+78
+X-OCN Clip Name Structure
+In the re-link process during conforming, it is extremely important to match the clip
+name between proxy and original high-res X-OCN files.
+The consistent clip naming rule is adopted on VENICE 2 and BURANO as follows.
+VENICE 2 offers two options in terms of handling Camera ID – Single digit (Type A)
+or Double digit sacrificing Camera Position (Type B).
+BURANO supports Single digit (Type A) only.
+
+79
+Delivery Format (Frame Line)
+Before starting to shoot, it is important to define the final target format ensuring
+between production and post-production teams – in order to avoid any issues during
+post-production process.
+VENICE 2 supports Frame Line feature, which help us frame correctly with the
+camera on set.
+User Frame Line display
+You can select whether to display arbitrarily configured user frame lines or a fixed
+aspect ratio. User Frame Line 1 and User Frame Line 2 can be set for user frame
+lines.
+• To set user-configured lines, select “Variable” in the menu and specify the Width,
+Height, H Position, V Position and Variable Aspect Type
+• To set a fixed aspect ratio, select “Preset” in the menu and specify the Preset
+Aspect Ratio, Scaling and Preset Aspect Ratio Type
+Assignable button operations
+You can show/hide User Frame Line 1 and User Frame Line 2 configured for Line A
+by assigning Line A: User Frame Disp. to some of assignable buttons and ITEM keys
+1 to 5. (similarly for Line B)
+Each time the assignable button is pressed, the display switches between :
+User Frame line 1 and 2 display  User Frame Line 1 display
+ User Frame Line 2 Display  User Frame Line 1 and 2 hidden
+You can also show/hide Aspect Ratio configured for Line A or Line B by assigning
+Line A: Aspect Ratio Disp. or Line B: Aspect Ratio Disp. to some of assignable buttons
+and ITEM keys 1 to 5.
+Each time the assignable button is pressed, the display switchers between :
+Aspect Ratio display  Aspect Ratio hidden
+
+80
+
+81
+Displaying Frame Line files created using Sony’s Frame Line Tool
+Sony’s Frame Line Tool is an online interactive tool to create Frame Line configuration
+files to upload to your camera. To use this tool :
+1. Select the camera model for 6K or 8K sensor
+2. Select or upload a preview image for reference
+3. Setup the desired frame lines and center target
+4. Export the XML settings file
+Frame Line Tool (
+https://pro.sony/frame-line-tool)
+The XML file needs to be saved in the following directory on SD card.
+MPC-3628: PRIVATE/SONY/PRO/CAMERA/MPC3628
+MPC-3626: PRIVATE/SONY/PRO/CAMERA/MPC3626
+By loading the XML file from SD card to VENICE 2 camera, you can save the Frame
+Line files in internal memory and then apply the data to User Frame Line 1 and 2.
+You can also perform the configuration from the web remote control full menu.
+
+82
+COLOR GRADING & VFX
+• ACES Workflow
+• HDR Workflow
+• VFX Workflow
+
+83
+ACES Workflow
+The Academy Color Encoding System (ACES) is the industry standard for managing
+color throughout the life cycle of a motion picture or television production. From
+image capture through editing, VFX, mastering, public presentation, archiving and
+future remastering, ACES ensures a consistent color experience that preserves the
+filmmaker’s creative vision.
+ACES is a free, open, device-independent color management and image interchange
+system that can be applied to almost any current or future workflow. It was
+developed by hundreds of the industry’s top scientists, engineers and end users,
+working together under the auspices of the Academy of Motion Picture Arts and
+Sciences (AMPAS).
+Sony has worked closely with the Academy to develop and test various
+implementations of ACES leading up to Version 1.0. As a member of the ACES Logo
+Program, Sony is committed to its cameras, related products and solutions
+supporting ACES-based workflows in the highest quality possible.
+
+84
+VENICE 2 provides a capability to select [ACEScct] in the [Input Color Space] menu
+setting for ACES workflow (which is not available on original VENICE). It allows to
+preview the footage on set, even during live color grading – with exactly the same
+“look” as what is used during color grading in post-production.
+As [Preset Look] setting, you can select [ACESproxy] or [ACEScct] depending on the
+workspace used on a color grading tool in post-production. [ACES 1.0 Output-
+Rec.709] can also be set for ACEScct workflow using in-camera color adjustment
+(CDL) and transform to Rec.709.
+Preset Look Select :
+• [ACESproxy] : Log curve of wide color space (AP1) defined by the Academy
+• [ACEScct] : Log curve of wide color space (AP1) based on ACESproxy, with toe
+characteristic that reduces contrast in the curve near black
+• [ACES 1.0 Output-Rec.709] : Rec.709 reference Look defined by the Academy
+
+85
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+86
+BURANO also offers the same ACES workflow as VENICE 2, allowing to select the
+same base looks – [ACESproxy], [ACEScct] or [ACES 1.0 Ouput-Rec.709].
+The difference from VENICE 2 is that the above base looks can be selected when
+[Color Gamut] in the Project menu is set to [S-Gamut3/S-Log3] (meaning there is
+no [ACEScct] option in the Color Gamut).
+An Input Device Transform (IDT) processes original camera data in the form of
+non-color-rendered RGB image values from a captured scene lit by an assumed
+illumination source (the scene adopted white) and converts them to ACES RGB
+relative exposure values in a scene linear color space.
+The IDT files on Sony CineAlta cameras are available to download from this page 
+on
+ACES Central website (acescentral.com).
+
+87
+In addition, Sony’s RAW Viewer application software also supports ACES workflow.
+You can perform the following based on ACES 1.3 :
+• Converting camera content to ACES color space and exporting to ACES
+Container (Scene-Linear OpenEXR)
+• Color grading in ACES working space
+• Monitoring and file output using ACES viewing pipeline
+
+88
+HDR Workflow
+With the widespread adoption of HDR-ready displays and the expansion of OTT
+streaming, the demand for HDR production has clearly increased. In the process of
+producing HDR footage, it is essential to ensure that the material is captured with a
+wide dynamic range and color gamut.
+Sony would recommend S-Gamut3/S-Log3 that is supported not only by Sony
+CineAlta (VENICE 2 / BURANO) cameras, but also by other Cinema Line / Alpha
+cameras – due to the following reasons. It has widely been used for HDR workflow
+even as a working space of Color Grading process in post-production.
+• To fully and adequately utilize the performance of the image sensor
+• To maintain the quality even when handling a wide dynamic range, minimizing
+the degradation of image quality during the finishing process conversion
+• S-Gamut3 is a color space that is highly compatible with ACES (AP1) / Rec.2020
+(rather than S-Gamut3.Cine)
+Using ACES is another option as a standard in the industry (as explained in the
+previous section).
+Even if the footage is captured with S-Gamut3/S-Log3, most of color grading tools
+can handle this S-Gamut3/S-Log3 converting to ACEScct easily. Based on ACES
+workflow, various deliverables are created through Output Transform.
+
+89
+VFX Workflow
+For visual effects work or contents creation for giant screen, we would recommend
+X-OCN XT mode as recording format*. This is ideal as it captures the highest quality
+imagery.
+*supported by VENICE 2 only (not by BURANO)
+S-Gamut3.Cine/S-Log3 or S-Gamut3/S-Log3 can be used for shooting, as most of
+current workflow can handle those color spaces in their color management system
+in post-production – converting to ACES color space easily, if necessary.
+Sony RAW Viewer is also one of the useful tools in VFX workflow due to the following
+reasons :
+• Capability to convert X-OCN to OpenEXR, while preserving all the camera & lens
+metadata completely
+• All the camera & lens metadata (including Tilt/Roll** gyro data) can be exported
+as CSV file
+**RAW Viewer v5.0 (or later) is required
+When shooting with BURANO in VFX workflow, Image Stabilization feature should be
+set to OFF (disabled). Because if this feature is activated, the optical axis in the
+recorded image moves continuously. Accordingly, the recorded metadata is also not
+useful for VFX process in post-production.
+
+90
+APPENDIX
+• Metadata (X-OCN)
+• Anamorphic De-Squeeze Ratio (VENICE 2)
+• Genlock Input
+• Camera Menu Simulator
+• File Size Calculator (VENICE 2)
+
+91
+Metadata (X-OCN)
+X-OCN is a very easy and flexible format to work with Metadata that reflects the
+setup of the camera is recorded alongside the image information.
+In post-production this metadata is automatically applied to the 16-bit linear
+recordings so that what you see in the edit or grading suite accurately reflects the
+way the camera was set. However, in post-production you can override the metadata
+settings for color temperature, Exposure Index and sharpness etc* to alter the way
+the data is processed.
+This gives a tremendous degree of flexibility while retaining the exceptional quality
+of the 16-bit recording.
+*The controls available depends on the software used
+The following information is a list of metadata recorded as embedded in X-OCN MXF
+files, as well as recorded in XML files at the same time on the camera :
+
+92
+Table legend
+Opt: Included if information is available on a lens attached to the camera (optional)
+Yes: Defined
+－: Not defined *These examples are based on clips shot on VENICE 2
+VENICE 2 BURANO VENICE 2 BURANO
+Creation Date 2021‑10‑29 11:04:05 Yes
+ Yes Yes Yes
+Last Update 2021‑10‑30 11:04:05 － － Yes
+ Yes
+UMID 060A2B340101010501010D43130000000
+70BF41D2F494EB7A16DD045A68CDF2E 
+Yes Yes Yes Yes
+Start 03:36:29:20 Yes
+ Yes Yes Yes
+End 03:36:32:19 Yes
+ Yes Yes Yes
+Duration 00:00:03:00 Yes
+ Yes Yes Yes
+Poster Frame － － － －
+Recording Mode － － Yes
+ Yes
+Drop Frame NDF Yes
+ Yes Yes Yes
+Camera VENICE/CineAltaV Yes
+ Yes Yes Yes
+Video Codec X‑OCN XT Yes
+ Yes Yes Yes
+Resolution 6048x4032 Yes
+ Yes Yes Yes
+Aspect Ratio 3:2 Yes
+ Yes Yes Yes
+Format FPS 23.98p Yes Yes Yes Yes
+Capture FPS 23.98p Yes Yes Yes Yes
+Pixel Aspect 1:1 － － Yes
+ Yes
+Flip normal － － Yes
+ Yes
+Embeded 3DLUT SL3SG3Ctos709.cube Yes ー ー ー
+Number of Audio Channels 
+4 
+Yes
+ Yes Yes Yes
+Audio Codec LPCM Yes Yes Yes Yes
+Audio Bit Depth 
+24 
+Yes
+ Yes Yes Yes
+Audio Sampling Rate 
+48000 
+Yes
+ Yes Yes Yes
+Auto Exposure Mode ManualExposureMode Yes Yes － －
+Exposure Index 
+500 
+Yes
+ Yes Yes Yes
+Auto Focus Sensing Area Setting ManualFocusMode Yes
+ Yes － －
+ND Filter Wheel 1/4 Yes
+ Yes Yes Yes
+Image Sensor Dimension Effective Width 35925um Yes
+ Yes － －
+Image Sensor Dimension Effective Height 23950um Yes
+ Yes － －
+Image Sensor Readout Mode ProgressiveFrame Yes
+ Yes Yes Yes
+Shutter Speed Angle 172.50deg Yes Yes Yes Yes
+Shutter Speed Time 1/50sec Yes Yes － －
+Camera Master Gain Adjustment 0.00dB Yes Yes － －
+ISO Sensitivity 
+500 
+Yes
+ Yes Yes Yes
+Electrical Extender Magnification 
+100% 
+Yes
+ Yes － －
+Auto White Balance Mode PresetWhiteBalanceSetup Yes Yes － －
+White Balance 
+5500 
+Yes
+ Yes Yes Yes
+Tint Correction 
+0.00000 
+Yes
+ Yes － －
+Camera Master Black Level 
+3.0% 
+－ － － －
+Capture Gamma Equation scene‑linear Yes Yes Yes Yes
+Gamma for CDL rec709 Yes ー Yes ー
+Color Primaries (Capture Color Primaries) － － － －
+Camera Attributes MPC‑36289999999Version5.00 Yes Yes Yes Yes
+Effective Marker Aspect Ratio 6048:3202 Yes Yes Yes Yes
+User Frame Line 1 1920×1080+0+0 Yes Yes － －
+User Frame Line 2 1920×1080+0+0 Yes ー － －
+Active Area Aspect Ratio 6048:4032 Yes Yes Yes Yes
+Pixel Aspect Ratio 1:1 Yes Yes Yes Yes
+Image Orientation normal Yes Yes － －
+Raw Black Code 
+512 
+Yes
+ Yes Yes Yes
+Raw Gray Code 
+1504 
+Yes
+ Yes Yes Yes
+Raw White Code 
+5472 
+Yes
+ Yes Yes Yes
+Gamma for Look s‑log3‑cine Yes Yes Yes Yes
+Color for Look s‑gamut3‑cine Yes Yes Yes Yes
+Item Notation example* in RAW Viewer 
+X‑OCN MXF X‑OCN XML
+
+93
+VENICE 2 BURANO VENICE 2
+ BURANO
+Pre‑CDL Transform LUT:SL3SG3Ctos709.cube Yes Yes Yes Yes
+Post‑CDL Transform none Yes
+ ー Yes ー
+Look Process Baked false Yes Yes Yes Yes
+Monitoring Characteristics rec709 Yes Yes Yes Yes
+Monitoring Base Curve rec709 Yes Yes Yes Yes
+Monitoring Color Primaries rec709 Yes Yes Yes Yes
+Monitoring Coding Equations rec709 Yes Yes Yes Yes
+Monitoring Descriptions LUT:SL3SG3Ctos709.cube Yes Yes Yes Yes
+Camera Tilt Angle 
+2.70000 
+Yes
+ ー － －
+Camera Roll Angle 
+1.30000 
+Yes
+ ー － －
+Focus Distance 2296mm Opt ー － －
+Aperture Value 
+3.14 
+Opt
+ ー － －
+Aperture Ring T Stop Position 2.8 + 3/10 Opt ー － －
+Current Focal Length 0mm Opt ー － －
+Hyperfocal Distance 219224mm Opt ー － －
+Near Focus Distance 2273mm Opt ー － －
+Far Focus Distance 2319mm Opt ー － －
+Horizontal Field of View 27.9deg Opt ー － －
+Entrance Pupil Position +51mm Opt ー － －
+Normalised Zoom Value 
+0.000 
+Opt
+ ー － －
+Lens Serial Number xxxxxxxx Opt
+ ー － －
+Iris F‑Number 
+2.87 
+Opt
+ Opt － －
+Iris T‑Number 
+3.1 
+Opt
+ Opt － －
+Iris Ring Position Opt Opt
+ － －
+Focus Position from Image Plane 2.296m Opt Opt － －
+Focus Ring Position Opt Opt － －
+Macro Setting OFF Opt
+ Opt － －
+Lens Zoom 35mm Still Camera Equivalent 85mm Opt
+ Opt － －
+Lens Zoom Actual Focal Length 85mm Opt Opt － －
+Zoom Ring Position Opt Opt － －
+Anamorphic Lens Squeeze Ratio Opt Opt
+ － －
+Optical Extender Magnification 
+100% 
+Opt
+ Opt － －
+Lens Attributes xxxxxxxx Opt Opt Opt Opt
+Cooke /i technology Opt ー － －
+Cooke /i2 technology Opt ー － －
+Cooke /i3 technology Opt ー － －
+Zeiss eXtended metadata Opt ー － －
+Description － － － －
+Circle － － － －
+Project － － － －
+Director Name － － － －
+Director of Photography Name － － － －
+Production － － － －
+Camera Index － － Yes Yes
+Reel － － Yes Yes
+Scene 
+－ － － －
+Cut 
+－ － － －
+Take 
+－ － － －
+Shot 
+－ － Yes
+ Yes
+Mark In 
+－ － － －
+Mark Out 
+－ － － －
+Item Notation example* in RAW Viewer 
+X‑OCN MXF X‑OCN XML
+
+94
+The following chart shows what kind of metadata is embedded on SDI output for
+each model.
+VENICE 2 BURANO
+X-OCN / ProRes X-OCN XAVC
+VPID* 
+✓ ✓ ✓
+Rec Trigger 
+✓** ✓ ✓
+Time Code 
+✓ - ✓
+Clip Name 
+✓ - ✓
+Acquisition Metadata
+(RDD 18)
+✓ - ✓
+UMID 
+✓ - ✓
+*Video Payload ID that allows automatic setting for switching 4K HDR / HD SDR on supported monitors
+(such as Sony BVM-HX3110) when the SDI output is connected
+**Not available for Monitor output on VENICE 2
+
+95
+Anamorphic De-Squeeze Ratio (VENICE 2)
+When an Anamorphic license is installed on VENICE 2, you can change the
+Anamorphic De-Squeeze Ratio setting for each Imager Mode as indicated in the
+tables from the next page.
+Also when shooting and recording a scene that is wider than the actual desired
+picture size, you can enlarge the recorded image to the desired picture size on the
+viewfinder or monitor screen.
+In some of imager modes, you can magnify the de-squeezed processed mage using
+Zoom to Fit function. For the supported imager mode and de-squeeze combinations,
+please refer to the tables from the next page.
+Legend (for the tables from the next page)
+
+96
+VENICE 2 (8K) – X-OCN Recording
+Note
+• FPS value of 1-7 cannot be set when Base ISO is set to ISO 3200
+• FPS value of 33.33 can be set when Project Frame Rate is set to 24/25/50
+• Zoom to Fit 16:9 cannot be selected when Project Frame Rate is set to 47.95
+* Zoom to Fit cannot be set to Off unless Imager Mode is set to 5.8K 6:5 and De-Squeeze is set to 2.0x
+VENICE 2 (8K) – ProRes Recording
+Note
+• FPS value of 1-7 cannot be set when Base ISO is set to ISO 3200
+• FPS value of 33.33 can be set when Project Frame Rate is set to 24/25/50
+• FPS value over 60 is not available in ProRes4444 recording
+• Zoom to Fit 16:9 cannot be selected when Project Frame Rate is set to 47.95
+• When recording in ProRes :
+Zoom to Fit 16:9 cannot be configured when recording in 4096x2160
+Zoom to Fit 17:9/2.39:1 cannot be configured when recording in 3840x2160
+* Zoom to Fit cannot be set to Off unless Imager Mode is set to 5.8K 6:5 and De-Squeeze is set to 2.0x
+
+97
+VENICE 2 (6K) – X-OCN Recording
+Note
+• FPS value of 33.33 can be set when Project Frame Rate is set to 24/25/50
+• Zoom to Fit 16:9 cannot be selected when Project Frame Rate is set to 47.95
+* Zoom to Fit cannot be set to Off unless Imager Mode is set to 5.8K 6:5 and De-Squeeze is set to 2.0x
+VENICE 2 (6K) – ProRes Recording
+Note
+• FPS value of 1-7 cannot be set when Base ISO is set to ISO 2500 and recording in ProRes
+• FPS value of 33.33 can be set when Project Frame Rate is set to 24/25/50
+• FPS value over 60 is not available in ProRes4444 recording
+• Zoom to Fit 16:9 cannot be selected when Project Frame Rate is set to 47.95
+• When recording in ProRes :
+Zoom to Fit 16:9 cannot be configured when recording in 4096x2160
+Zoom to Fit 17:9/2.39:1 cannot be configured when recording in 3840x2160
+* Zoom to Fit cannot be set to Off unless Imager Mode is set to 5.8K 6:5 and De-Squeeze is set to 2.0x
+
+98
+Genlock Input
+VENICE 2 can accept either a digital or an analog signal for Genlock input, by
+[Input Source] menu setting under [TC/Media] -> [Genlock]. The following chart
+shows available input signals.
+Project
+Frame Rate
+Digital (HD SDI) Analog
+23.98 / 47.95 1920x1080 47.95i (23.98PsF)
+1920x1080 23.98P
+1920x1080 47.95i (23.98PsF)
+1920x1080 23.98P
+24 1920x1080 48i (24PsF)
+1920x1080 24P
+1920x1080 48i (24PsF)
+1920x1080 24P
+25 / 50 1920x1080 50i (25PsF)
+1920x1080 25P
+1920x1080 50i (25PsF)
+1920x1080 25P
+720x576 50i
+29.97 / 59.94 1920x1080 59.94i (29.97PsF)
+1920x1080 29.97P
+1920x1080 59.94i (29.97PsF)
+1920x1080 29.97P
+720x486 59.94i
+To enable Genlock input on BURANO, you need to set the [TC/REF IN/OUT] select
+switch of the unit to the [IN] position. This model can only accept an analog signal
+(not supporting a digital signal) shown in the following chart.
+System Frequency of
+Recording Format
+Supported Input Signal
+23.98P 1920x1080 47.95i (23.98PsF)
+1920x1080 23.98P
+24P 1920x1080 48i (24PsF)
+1920x1080 24P
+25P / 50P 1920x1080 50i (25PsF)
+720x576 50i
+29.97P / 59.94P 1920x1080 59.94i (29.97PsF)
+720x486 59.94i
+
+99
+Camera Menu Simulator
+Sony’s camera simulator is an interactive training tool that represents the CineAlta
+camera’s menu-driven use interface.
+VENICE 2 (8K) / VENICE 2 (6K)
+BURANO
+• Supported browsers : Google Chrome 63 and above, Safari 10 and above.
+• The simulators are designed for evaluation purposes only and we cannot guarantee its accuracy in
+all possible scenarios. Please use at your own risk.
+• Optional full-frame, anamorphic and HFR licenses may be installed in the simulators.
+• Camera may be depicted with optional hardware.
+• The menu simulators were produced for current camera software. Subsequent updates may
+change the operation of the camera menu systems.
+
+100
+File Size Calculator (VENICE 2)
+This is an interactive calculator to determine Sony VENICE 2 file sizes, data rates,
+recording times and card usage.
+VENICE 2

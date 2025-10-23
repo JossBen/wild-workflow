@@ -1,0 +1,76 @@
+‘WILDERNESS’ 
+
+2025: Audio Tech set up: as at 19/10/25 V1
+
+SHOOT: 10/011/25 – 19/12/25
+POST Super 
+Name:
+M: 
+E: 
+
+SYNC / Camera TEST: To be advised?  File Numbering as follows: (I assume we are using the Australian system) - Episode     Scene        Shot       Take       2            163           56         01
+If not the American system? TBC  Files will be recorded as follows: - 25fps ?  or 24fps????? =24fps - 48hz   - 24bit   - Poly Files.
+-  -20DB Tone Ref  Folders as follows: - Folder No1 = WILDERNESS - Folder No2 = SHD-01-(‘A’ if we are splitting audio rushes at lunch time)  
+HOPEFULLY WE WILL NOT BE SPLITTING AUDIO RUSHES AT LUNCHTIME, tbc. If we are splitting rushes at lunchtime Folder No2 will read “SHD-01-B”
+
+We are splitting rushes at lunch time!
+
+
+Recorded Media Delivered to Post:
+Will be on SD Card  Timecode: There will be the same timecode (time of day / 24 hr clock) on  Camera A, B, and C, as on the Audio Recorder Hard Drive Sound Devices Scropio, SD card and the 1 x Timecode Slate. 
+Both Camera A, B, C, Audio Recorder, and the 1 x Timecode Slate will be synced at the start of the shooting day. A timecode pulse will be sent every 6 seconds to all equipment receiving timecode. This results in all equipment being re jammed with timecode  every 6 seconds which will greatly limit the possibility of any timecode drift. All equipment will also be visually periodically checked as well for any timecode drift. 
+ Recorded Tracks:
+- Sound reports will have descriptions of what cast is on what mic / channel. - I will endeavour to get wild lines if needed, along with wild fx and atmos (time permitting). - At the start of each day there will be a TONE / ID file. - I can record 18 tracks in total. 16 will be discrete / ISO, 2 will be a left and right mix of all live mics (scratch tracks for rushes). - Generally the Left Track scratch track will be BOOMS, the Right Track scratch track will be RADIO MICS.
+
+The majority of times the track lay up will be: 
+TK 1 = Mix L Booms (post fade for sync rushes) 
+TK 2 = Mix R Radio Mics (post fade for sync rushes)
+TK 3 = Boom 1 (ISO track, pre fade labelled with appropriate characters)
+TK 4 = Boom 2 (ISO track, pre fade labelled with appropriate characters)
+TK 5 = Boom 3 / Radio Mic 3 (ISO track, pre fade labelled with appropriate characters)
+TK 6 = Radio Mic 4 (ISO track, pre fade labelled with appropriate characters)
+TK 7 = Radio Mic 5 (ISO track, pre fade labelled with appropriate characters)
+TK 8 = Radio Mic 6 (ISO track, pre fade labelled with appropriate characters)
+TK 9 = Radio Mic 7 (ISO track, pre fade labelled with appropriate characters)
+TK10 = Radio Mic 8 (ISO track, pre fade labelled with appropriate characters)
+TK11 = Radio Mic 9 (ISO track, pre fade labelled with appropriate characters)
+TK12 = Radio Mic 10 (ISO track, pre fade labelled with appropriate characters)
+TK13 = Radio Mic 11 (ISO track, pre fade labelled with appropriate characters)
+TK14 = Radio Mic. 12 (ISO track, pre fade labelled with appropriate characters)
+TK15 -18 = Generally used for Playback etc (ISO track, with appropriate labelling)
+
+
+
+- Each track will be labelled with the actors screen name. I will endeavour to keep the same cast on the same tracks as best as possible. In order to do this and have consistency in the track if using AVID, I would need to have the odd track recorded that would have no live mic. Meaning the track will be armed (recorded) but muted. This will also mean more data being down loaded when armed tracks are recorded with no live mic.
+
+For example:
+Track Lay up as it would will apprear in AVID from a Sound Devices Recorder
+Track 1 = Left Mix being booms
+Track 2 = Right Mix being radio mics
+Track 3 = Boom 1
+Track 4 = Armed but mute / no live mic
+Track 5 = Armed but muted / no live mic
+Track 6 = Radio Mic Rob (as Character Rob is usually allocated to track 6)
+
+If I was to record the above for example BUT disengage ie not recorded Track 4, 5 Armed but muted / no live mic, hence less data to load and store, then the track lay up as it will appear in AVID from the Sound Devices Recorder is as follows:
+
+Track 1 = Left Mix being booms
+Track 2 = Right Mix being radio mics
+Track 3 = Boom 1
+Track 4 = Radio Mic Rob (Character Rob is usually allocated on Track 6 as it will be on my mixing desk but with the above method it has moved on the Avid to Track 4. Doing things this way will result in less consistency of Characters appearing on the same track)
+
+
+I can do either of the two examples above so could POST PLEASE ADVISE WHICH WAY THEY WOULD LIKE ME TO RECORD THE FILES. Post is very welcome to call me on 0418 36 95 95 to discuss further as these matters sometimes require  further discussion ie, I find a simple one on one conversations works better than emails and is quicker.
+
+  Slate: - We are using 1 x “Timecode Slate" supplied by the Sound Dept. If other cameras do not have timecode ie “GoPros” etc I will endeavour to get sync slates when and where possible.
+
+
+I would assume the slates will have the following on them: Title Date Director DOP
+ EP.               SC.               SHT.                 TAKE.         CAM A /B.     FRAME RATE. ( assume we are not slating with the American system????)  SD CARD going to post: - The CF card will be labelled with the "Job Name, Shoot Day No" At the end of each days shooting I will secure the SD card in a case that will have RED GAFFA TAPE securing the lock of the case (this will indicate that the SD card is exposed and not to be formatted). This will travel along with the Camera Rushes to Post. - Along with the audio rushes there will be the Sound Report of the days recordings as a .pdf file on the SD card. 
+NOTE: Could you please send me the names and email addresses of the people who require a copy of the days audio rushes ‘Sound Report’ or am I uploading to a SOUND REPORT FOLDER? - I will have a back up of the days rushes stored on a separate hard drive. - Post to make a back up copy of that days Sound Rushes. - Upon Post Production returning the Sound Rushes to Location, could Post PLEASE replace the RED GAFFA TAPE with GREEN GAFFA TAPE as this will indicate to me that the CF Card is OK to format.   NOTE: POST - Please DO NOT format any audio SD cards as I will do this on location.
+
+Question: What is the anticipated turn around of Rushes Card?
+  I hope this all fits in with your processes. Please feel free contact me to put forward anything I may have missed or anything you may need.  If you could please reply upon receipt with your amendments. I will then amend this document and send it back for your file / reference.
+
+I’m looking forward to working with you all.  Thanks,  Roger van Wensveen
+Location Sound Recordist ‘WILDERNESS’ 2025
